@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <button (click)="navToSearchSpecialty()" class="button-home" ion-button block icon-start color="light">
+    <ion-icon name="ios-medkit-outline"></ion-icon>
+    Especialidade
+  </button>
+
+  <button (click)="navToSearchLocation()" class="button-home" ion-button block icon-start color="light">
+    <ion-icon name="ios-navigate-outline"></ion-icon>
+    Localização
+  </button>
+
+  <button class="button-home" ion-button block icon-start color="light">
+    <ion-icon name="ios-cash-outline"></ion-icon>
+    Pagamento
+  </button>
+
+  <button margin-top ion-button block icon-left>
+    <ion-icon name="search"></ion-icon>
+    Buscar
+  </button>
+
+</ion-content>
