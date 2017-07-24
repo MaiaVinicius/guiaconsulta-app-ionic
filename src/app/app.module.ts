@@ -4,20 +4,24 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import {SearchSpecialtyPage} from "../pages/search-specialty/search-specialty";
 import {SearchLocationPage} from "../pages/search-location/search-location";
+import {PaymentMethodPage} from "../pages/payment-method/payment-method";
+import {ResultPage} from "../pages/result/result";
+import {ResultFiltersPage} from "../pages/result-filters/result-filters";
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    ListPage,
     SearchSpecialtyPage,
-    SearchLocationPage
+    SearchLocationPage,
+    PaymentMethodPage,
+    ResultPage,
+    ResultFiltersPage
   ],
   imports: [
     BrowserModule,
@@ -27,9 +31,11 @@ import {SearchLocationPage} from "../pages/search-location/search-location";
   entryComponents: [
     MyApp,
     HomePage,
-    ListPage,
     SearchSpecialtyPage,
-    SearchLocationPage
+    SearchLocationPage,
+    PaymentMethodPage,
+    ResultPage,
+    ResultFiltersPage
   ],
   providers: [
     StatusBar,
