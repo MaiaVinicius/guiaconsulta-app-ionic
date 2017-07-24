@@ -1,6 +1,5 @@
-import { Component } from '@angular/core';
-import {ModalController, NavController, NavParams} from 'ionic-angular';
-import {AddressAutocompletePage} from "../address-autocomplete/address-autocomplete";
+import {Component, NgZone, ViewChild} from '@angular/core';
+import {ModalController, NavController, NavParams, Searchbar, ViewController} from 'ionic-angular';
 
 /**
  * Generated class for the SearchLocationPage page.
@@ -8,30 +7,56 @@ import {AddressAutocompletePage} from "../address-autocomplete/address-autocompl
  * See http://ionicframework.com/docs/components/#navigation for more info
  * on Ionic pages and navigation.
  */
+declare var google: any;
 
 @Component({
   selector: 'page-search-location',
   templateUrl: 'search-location.html',
 })
 export class SearchLocationPage {
-  address;
+  autocompleteItems;
+  autocomplete;
+  service = new google.maps.places.AutocompleteService();
+  @ViewChild('searchBarLocation') searchBar: Searchbar;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private modalCtrl: ModalController) {
-    this.address = {
-        place: ""
+  constructor(public viewCtrl: ViewController, private zone: NgZone) {
+    this.autocompleteItems = [];
+    this.autocomplete = {
+      query: ''
     };
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad SearchLocationPage');
+  ngOnInit() {
+    setTimeout(() => {
+      this.searchBar.setFocus();
+    }, 800);
   }
 
-  showAddressModal () {
-    let modal = this.modalCtrl.create(AddressAutocompletePage);
+
+  dismiss() {
+    this.viewCtrl.dismiss();
+  }
+
+  chooseItem(item: any) {
+    this.viewCtrl.dismiss(item);
+  }
+
+  updateSearch() {
+    if (this.autocomplete.query == '') {
+      this.autocompleteItems = [];
+      return;
+    }
     let me = this;
-    modal.onDidDismiss(data => {
-      this.address.place = data;
+    this.service.getPlacePredictions({
+      input: this.autocomplete.query,
+      componentRestrictions: {country: 'BR'}
+    }, function (predictions, status) {
+      me.autocompleteItems = [];
+      me.zone.run(function () {
+        predictions.forEach(function (prediction) {
+          me.autocompleteItems.push(prediction.description);
+        });
+      });
     });
-    modal.present();
   }
 }

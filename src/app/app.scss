@@ -15,7 +15,7 @@
 // automatically applied to the <body> element in the app.
 
 .platform-android {
-  .button {
+  .button, .button-md {
     -webkit-box-shadow: none;
     box-shadow: none;
   }

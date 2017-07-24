@@ -10,7 +10,6 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import {SearchSpecialtyPage} from "../pages/search-specialty/search-specialty";
 import {SearchLocationPage} from "../pages/search-location/search-location";
-import {AddressAutocompletePage} from "../pages/address-autocomplete/address-autocomplete";
 
 @NgModule({
   declarations: [
@@ -18,8 +17,7 @@ import {AddressAutocompletePage} from "../pages/address-autocomplete/address-aut
     HomePage,
     ListPage,
     SearchSpecialtyPage,
-    SearchLocationPage,
-    AddressAutocompletePage
+    SearchLocationPage
   ],
   imports: [
     BrowserModule,
@@ -31,8 +29,7 @@ import {AddressAutocompletePage} from "../pages/address-autocomplete/address-aut
     HomePage,
     ListPage,
     SearchSpecialtyPage,
-    SearchLocationPage,
-    AddressAutocompletePage
+    SearchLocationPage
   ],
   providers: [
     StatusBar,

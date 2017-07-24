@@ -7,6 +7,7 @@ import {SearchLocationPage} from "../search-location/search-location";
   selector: 'page-home',
   templateUrl: 'home.html'
 })
+
 export class HomePage {
 
   constructor(public navCtrl: NavController) {
@@ -18,6 +19,7 @@ export class HomePage {
   }
 
   navToSearchLocation() {
-    this.navCtrl.push(SearchLocationPage);
+    this.navCtrl.push(SearchLocationPage,{},
+      {animate: true, animation: 'transition', duration: 500, direction: 'forward'});
   }
 }
