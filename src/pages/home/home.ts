@@ -19,7 +19,7 @@ export class HomePage {
   }
 
   navToSearchLocation() {
-    this.navCtrl.push(SearchLocationPage,{},
-      {animate: true, animation: 'transition', duration: 500, direction: 'forward'});
+    //{animate: true, animation: 'transition', duration: 500, direction: 'forward'}
+    this.navCtrl.push(SearchLocationPage);
   }
 }

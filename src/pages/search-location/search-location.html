@@ -7,11 +7,22 @@
 </ion-header>
 <ion-content>
   <ion-list>
-    <ion-item *ngFor="let item of autocompleteItems" tappable (click)="chooseItem(item)">
-
-    </ion-item>
-    <ion-item *ngFor="let item of autocompleteItems" tappable (click)="chooseItem(item)">
+    <button ion-item tappable icon-start>
+      <ion-avatar item-start>
+        <ion-icon name="home"></ion-icon>
+      </ion-avatar>
+      Casa
+      <p>Estrada do Guanumbi, 15</p>
+    </button>
+    <button ion-item tappable icon-start>
+      <ion-avatar item-start>
+        <ion-icon name="briefcase"></ion-icon>
+      </ion-avatar>
+      Trabalho
+      <p>Av. Abelardo Bueno, 1111</p>
+    </button>
+    <button ion-item *ngFor="let item of autocompleteItems" tappable (click)="chooseItem(item)">
       {{ item }}
-    </ion-item>
+    </button>
   </ion-list>
 </ion-content>

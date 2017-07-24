@@ -20,6 +20,7 @@ export class SearchLocationPage {
   @ViewChild('searchBarLocation') searchBar: Searchbar;
 
   constructor(public viewCtrl: ViewController, private zone: NgZone) {
+
     this.autocompleteItems = [];
     this.autocomplete = {
       query: ''
