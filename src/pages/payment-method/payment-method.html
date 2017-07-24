@@ -7,9 +7,14 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Forma de pagamento</ion-title>
+    <ion-title *ngIf="!searchingInsurance">Forma de pagamento</ion-title>
+    <ion-buttons *ngIf="!searchingInsurance" (click)="searchInsurance()" end>
+      <button ion-button large>
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-searchbar showCancelButton="true" (ionCancel)="cancelSearchInsurance()" #searchBarInsurance *ngIf="searchingInsurance" placeholder="Nome do convenio"></ion-searchbar>
   </ion-navbar>
-
 </ion-header>
 
 
