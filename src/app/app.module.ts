@@ -13,6 +13,7 @@ import {PaymentMethodPage} from "../pages/payment-method/payment-method";
 import {ResultPage} from "../pages/result/result";
 import {ResultFiltersPage} from "../pages/result-filters/result-filters";
 import {MedicationReminderPage} from "../pages/medication/medication-reminder/medication-reminder";
+import {MedicationReminderAddPage} from "../pages/medication/medication-reminder-add/medication-reminder-add";
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import {MedicationReminderPage} from "../pages/medication/medication-reminder/me
     PaymentMethodPage,
     ResultPage,
     ResultFiltersPage,
-    MedicationReminderPage
+    MedicationReminderPage,
+    MedicationReminderAddPage
   ],
   imports: [
     BrowserModule,
@@ -38,7 +40,8 @@ import {MedicationReminderPage} from "../pages/medication/medication-reminder/me
     PaymentMethodPage,
     ResultPage,
     ResultFiltersPage,
-    MedicationReminderPage
+    MedicationReminderPage,
+    MedicationReminderAddPage
   ],
   providers: [
     StatusBar,
