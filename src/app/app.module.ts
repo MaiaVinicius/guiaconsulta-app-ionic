@@ -12,6 +12,7 @@ import {SearchLocationPage} from "../pages/search-location/search-location";
 import {PaymentMethodPage} from "../pages/payment-method/payment-method";
 import {ResultPage} from "../pages/result/result";
 import {ResultFiltersPage} from "../pages/result-filters/result-filters";
+import {MedicationReminderPage} from "../pages/medication/medication-reminder/medication-reminder";
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import {ResultFiltersPage} from "../pages/result-filters/result-filters";
     SearchLocationPage,
     PaymentMethodPage,
     ResultPage,
-    ResultFiltersPage
+    ResultFiltersPage,
+    MedicationReminderPage
   ],
   imports: [
     BrowserModule,
@@ -35,7 +37,8 @@ import {ResultFiltersPage} from "../pages/result-filters/result-filters";
     SearchLocationPage,
     PaymentMethodPage,
     ResultPage,
-    ResultFiltersPage
+    ResultFiltersPage,
+    MedicationReminderPage
   ],
   providers: [
     StatusBar,

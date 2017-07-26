@@ -1,5 +1,5 @@
 import {Component, NgZone, ViewChild} from '@angular/core';
-import {ModalController, NavController, NavParams, Searchbar, ViewController} from 'ionic-angular';
+import {Searchbar, ViewController} from 'ionic-angular';
 
 /**
  * Generated class for the SearchLocationPage page.
