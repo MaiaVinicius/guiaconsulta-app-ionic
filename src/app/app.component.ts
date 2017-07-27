@@ -1,10 +1,11 @@
-import { Component, ViewChild } from '@angular/core';
-import { Nav, Platform } from 'ionic-angular';
-import { StatusBar } from '@ionic-native/status-bar';
-import { SplashScreen } from '@ionic-native/splash-screen';
+import {Component, ViewChild} from '@angular/core';
+import {Nav, Platform} from 'ionic-angular';
+import {StatusBar} from '@ionic-native/status-bar';
+import {SplashScreen} from '@ionic-native/splash-screen';
 
-import { HomePage } from '../pages/home/home';
-import { MedicationReminderPage } from '../pages/medication/medication-reminder/medication-reminder';
+import {HomePage} from '../pages/home/home';
+import {MedicationReminderPage} from '../pages/medication/medication-reminder/medication-reminder';
+import {AppointmentsPage} from "../pages/appointments/appointments";
 
 @Component({
   templateUrl: 'app.html'
@@ -14,15 +15,16 @@ export class MyApp {
 
   rootPage: any = HomePage;
 
-  pages: Array<{title: string, component: any}>;
+  pages: Array<{ title: string, component: any, icon: string }>;
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Busca', component: HomePage },
-      { title: 'Lembrete de medicamentos', component: MedicationReminderPage },
+      {title: 'Busca', icon: 'search', component: HomePage},
+      {title: 'Lembrete de medicamentos', icon: 'time', component: MedicationReminderPage},
+      {title: 'Consultas', icon: 'calendar', component: AppointmentsPage},
     ];
 
   }

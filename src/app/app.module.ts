@@ -14,6 +14,7 @@ import {ResultPage} from "../pages/result/result";
 import {ResultFiltersPage} from "../pages/result-filters/result-filters";
 import {MedicationReminderPage} from "../pages/medication/medication-reminder/medication-reminder";
 import {MedicationReminderAddPage} from "../pages/medication/medication-reminder-add/medication-reminder-add";
+import {AppointmentsPage} from "../pages/appointments/appointments";
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import {MedicationReminderAddPage} from "../pages/medication/medication-reminder
     ResultPage,
     ResultFiltersPage,
     MedicationReminderPage,
-    MedicationReminderAddPage
+    MedicationReminderAddPage,
+    AppointmentsPage,
   ],
   imports: [
     BrowserModule,
@@ -41,7 +43,8 @@ import {MedicationReminderAddPage} from "../pages/medication/medication-reminder
     ResultPage,
     ResultFiltersPage,
     MedicationReminderPage,
-    MedicationReminderAddPage
+    MedicationReminderAddPage,
+    AppointmentsPage
   ],
   providers: [
     StatusBar,
