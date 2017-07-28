@@ -19,6 +19,7 @@ import {EvaluationPage} from "../pages/evaluation/evaluation";
 import { Ionic2RatingModule } from 'ionic2-rating';
 import {ConfigurationsPage} from "../pages/configuration/configurations/configurations";
 import {IndexPage} from "../pages/index/index";
+import {SearchMedicationPage} from "../pages/medication/search-medication/search-medication";
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import {IndexPage} from "../pages/index/index";
     AppointmentsPage,
     EvaluationPage,
     ConfigurationsPage,
-    IndexPage
+    IndexPage,
+    SearchMedicationPage
   ],
   imports: [
     BrowserModule,
@@ -55,7 +57,8 @@ import {IndexPage} from "../pages/index/index";
     AppointmentsPage,
     EvaluationPage,
     ConfigurationsPage,
-    IndexPage
+    IndexPage,
+    SearchMedicationPage
   ],
   providers: [
     StatusBar,

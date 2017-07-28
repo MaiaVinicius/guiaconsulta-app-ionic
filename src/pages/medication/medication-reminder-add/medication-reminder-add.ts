@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import {NavController, NavParams, ViewController} from 'ionic-angular';
+import {Component} from '@angular/core';
+import {NavController, NavParams, ViewController, ModalController } from 'ionic-angular';
+import {SearchMedicationPage} from "../search-medication/search-medication";
 
 /**
  * Generated class for the MedicationReminderAddPage page.
@@ -14,7 +15,7 @@ import {NavController, NavParams, ViewController} from 'ionic-angular';
 })
 export class MedicationReminderAddPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,public viewCtrl: ViewController) {
+  constructor(public modalCtrl: ModalController, public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController) {
   }
 
   ionViewDidLoad() {
@@ -23,5 +24,10 @@ export class MedicationReminderAddPage {
 
   dismiss() {
     this.viewCtrl.dismiss();
+  }
+
+  searchMedication() {
+    let modal = this.modalCtrl.create(SearchMedicationPage);
+    modal.present();
   }
 }
