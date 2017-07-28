@@ -6,6 +6,8 @@ import {SplashScreen} from '@ionic-native/splash-screen';
 import {HomePage} from '../pages/home/home';
 import {MedicationReminderPage} from '../pages/medication/medication-reminder/medication-reminder';
 import {AppointmentsPage} from "../pages/appointments/appointments";
+import {EvaluationPage} from "../pages/evaluation/evaluation";
+import {IndexPage} from "../pages/index/index";
 
 @Component({
   templateUrl: 'app.html'
@@ -25,6 +27,9 @@ export class MyApp {
       {title: 'Busca', icon: 'search', component: HomePage},
       {title: 'Lembrete de medicamentos', icon: 'time', component: MedicationReminderPage},
       {title: 'Consultas', icon: 'calendar', component: AppointmentsPage},
+      {title: 'Avaliar', icon: 'start', component: EvaluationPage},
+      {title: 'Index', icon: 'start', component: IndexPage},
+      // {title: 'Configurações', icon: 'settings', component: },
     ];
 
   }

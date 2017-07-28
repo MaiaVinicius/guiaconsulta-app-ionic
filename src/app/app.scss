@@ -29,6 +29,23 @@
     -webkit-box-shadow: none;
     border-bottom: 1px solid #D7D7D7;
   }
+
+  .item-inner{
+    box-shadow: none!important;
+  }
+
+  .item-input-has-focus .item-inner{
+    border-bottom: 2px solid #2D9CD7;
+  }
+
+  .list-md .item-input:last-child{
+    border-bottom: none;
+    box-shadow: none;
+  }
+}
+
+.item-input, .item-select{
+  padding-left: 0!important;
 }
 
 .platform-ios{
@@ -50,4 +67,8 @@
 
 ion-note{
   font-size: 13px;
+}
+
+.text-center{
+  text-align: center;
 }

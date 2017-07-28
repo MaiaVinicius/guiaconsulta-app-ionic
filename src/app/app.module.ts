@@ -15,6 +15,10 @@ import {ResultFiltersPage} from "../pages/result-filters/result-filters";
 import {MedicationReminderPage} from "../pages/medication/medication-reminder/medication-reminder";
 import {MedicationReminderAddPage} from "../pages/medication/medication-reminder-add/medication-reminder-add";
 import {AppointmentsPage} from "../pages/appointments/appointments";
+import {EvaluationPage} from "../pages/evaluation/evaluation";
+import { Ionic2RatingModule } from 'ionic2-rating';
+import {ConfigurationsPage} from "../pages/configuration/configurations/configurations";
+import {IndexPage} from "../pages/index/index";
 
 @NgModule({
   declarations: [
@@ -28,10 +32,14 @@ import {AppointmentsPage} from "../pages/appointments/appointments";
     MedicationReminderPage,
     MedicationReminderAddPage,
     AppointmentsPage,
+    EvaluationPage,
+    ConfigurationsPage,
+    IndexPage
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
+    Ionic2RatingModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -44,7 +52,10 @@ import {AppointmentsPage} from "../pages/appointments/appointments";
     ResultFiltersPage,
     MedicationReminderPage,
     MedicationReminderAddPage,
-    AppointmentsPage
+    AppointmentsPage,
+    EvaluationPage,
+    ConfigurationsPage,
+    IndexPage
   ],
   providers: [
     StatusBar,
