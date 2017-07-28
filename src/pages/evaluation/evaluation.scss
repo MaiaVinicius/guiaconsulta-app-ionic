@@ -1,0 +1,20 @@
+page-evaluation {
+  ul {
+    //padding: 0px;
+
+    &.rating li {
+      padding: 5px 6px !important;
+      background: none;
+      color: #ffb400;
+
+      ion-icon {
+        font-size: 40px;
+      }
+    }
+  }
+
+  .center {
+    max-width: 660px;
+    margin-right: auto;
+  }
+}
