@@ -14,6 +14,7 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class AppointmentsPage {
   reference = "upcomming";
+  rating;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }

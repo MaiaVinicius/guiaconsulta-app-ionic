@@ -30,25 +30,25 @@
 
   <div [ngSwitch]="reference">
     <ion-list *ngSwitchCase="'previous'">
-      <ion-item>
+      <button ion-item>
         <ion-avatar item-start>
-          <img src="assets/img/avatar-ts-woody.png">
+          <img src="assets/img/icon-boy.svg">
         </ion-avatar>
-        <h2>João da Silva</h2>
+        <h3>João da Silva</h3>
         <p>Cardiologista</p>
-        <ion-note item-end>29/07 12:00</ion-note>
-      </ion-item>
+        <ion-note item-end>27/07 - 12:00</ion-note>
+      </button>
     </ion-list>
 
     <ion-list *ngSwitchCase="'upcomming'">
-      <ion-item>
+      <button ion-item>
         <ion-avatar item-start>
-          <img src="assets/img/avatar-ts-woody.png">
+          <img src="assets/img/icon-girl.svg">
         </ion-avatar>
-        <h2>Woody</h2>
-        <p>This town ain't big enough for the two of us!</p>
-        <ion-note item-end>3:43 pm</ion-note>
-      </ion-item>
+        <h3>Maria das Graças</h3>
+        <p>Esteticista</p>
+        <ion-note item-end>27/07 - 12:00</ion-note>
+      </button>
     </ion-list>
   </div>
 </ion-content>
