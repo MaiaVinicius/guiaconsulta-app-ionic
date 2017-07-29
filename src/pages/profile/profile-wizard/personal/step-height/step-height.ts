@@ -10,7 +10,7 @@ import { NavController, NavParams } from 'ionic-angular';
 
 @Component({
   selector: 'page-step-height',
-  templateUrl: 'src/pages/profile/profile-wizard/personal/step-height/step-height.html',
+  templateUrl: 'step-height.html',
 })
 export class StepHeightPage {
 

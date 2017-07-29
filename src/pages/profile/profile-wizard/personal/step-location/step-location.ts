@@ -10,7 +10,7 @@ import { NavController, NavParams } from 'ionic-angular';
 
 @Component({
   selector: 'page-step-location',
-  templateUrl: 'src/pages/profile/profile-wizard/personal/step-location/step-location.html',
+  templateUrl: 'step-location.html',
 })
 export class StepLocationPage {
 

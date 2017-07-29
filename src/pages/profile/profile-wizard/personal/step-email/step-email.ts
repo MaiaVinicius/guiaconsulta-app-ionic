@@ -10,7 +10,7 @@ import { NavController, NavParams } from 'ionic-angular';
 
 @Component({
   selector: 'page-step-email',
-  templateUrl: 'src/pages/profile/profile-wizard/personal/step-email/step-email.html',
+  templateUrl: 'step-email.html',
 })
 export class StepEmailPage {
 

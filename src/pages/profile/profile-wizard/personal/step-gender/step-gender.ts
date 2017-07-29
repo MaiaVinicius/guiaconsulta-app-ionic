@@ -10,7 +10,7 @@ import { NavController, NavParams } from 'ionic-angular';
 
 @Component({
   selector: 'page-step-gender',
-  templateUrl: 'src/pages/profile/profile-wizard/personal/step-gender/step-gender.html',
+  templateUrl: 'step-gender.html',
 })
 export class StepGenderPage {
 

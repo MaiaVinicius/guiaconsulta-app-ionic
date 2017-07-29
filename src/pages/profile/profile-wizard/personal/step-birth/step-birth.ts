@@ -10,7 +10,7 @@ import { NavController, NavParams } from 'ionic-angular';
 
 @Component({
   selector: 'page-step-birth',
-  templateUrl: 'src/pages/profile/profile-wizard/personal/step-birth/step-birth.html',
+  templateUrl: 'step-birth.html',
 })
 export class StepBirthPage {
 

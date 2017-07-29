@@ -10,7 +10,7 @@ import { NavController, NavParams } from 'ionic-angular';
 
 @Component({
   selector: 'page-step-blood-group',
-  templateUrl: 'src/pages/profile/profile-wizard/personal/step-blood-group/step-blood-group.html',
+  templateUrl: 'step-blood-group.html',
 })
 export class StepBloodGroupPage {
 

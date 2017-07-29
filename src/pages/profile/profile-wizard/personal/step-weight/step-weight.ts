@@ -10,7 +10,7 @@ import { NavController, NavParams } from 'ionic-angular';
 
 @Component({
   selector: 'page-step-weight',
-  templateUrl: 'src/pages/profile/profile-wizard/personal/step-weight/step-weight.html',
+  templateUrl: 'step-weight.html',
 })
 export class StepWeightPage {
 

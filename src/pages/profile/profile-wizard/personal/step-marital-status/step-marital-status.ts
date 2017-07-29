@@ -10,7 +10,7 @@ import { NavController, NavParams } from 'ionic-angular';
 
 @Component({
   selector: 'page-step-marital-status',
-  templateUrl: 'src/pages/profile/profile-wizard/personal/step-marital-status/step-marital-status.html',
+  templateUrl: 'step-marital-status.html',
 })
 export class StepMaritalStatusPage {
 
