@@ -1,25 +1,39 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { ErrorHandler, NgModule } from '@angular/core';
-import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
+import {BrowserModule} from '@angular/platform-browser';
+import {ErrorHandler, NgModule} from '@angular/core';
+import {IonicApp, IonicErrorHandler, IonicModule} from 'ionic-angular';
 
-import { MyApp } from './app.component';
-import { HomePage } from '../pages/home/home';
+import {MyApp} from './app.component';
+import {HomePage} from '../pages/home/home';
 
-import { StatusBar } from '@ionic-native/status-bar';
-import { SplashScreen } from '@ionic-native/splash-screen';
+import {StatusBar} from '@ionic-native/status-bar';
+import {SplashScreen} from '@ionic-native/splash-screen';
 import {SearchSpecialtyPage} from "../pages/search-specialty/search-specialty";
 import {SearchLocationPage} from "../pages/search-location/search-location";
 import {PaymentMethodPage} from "../pages/payment-method/payment-method";
 import {ResultPage} from "../pages/result/result";
 import {ResultFiltersPage} from "../pages/result-filters/result-filters";
-import {MedicationReminderPage} from "../pages/medication/medication-reminder/medication-reminder";
-import {MedicationReminderAddPage} from "../pages/medication/medication-reminder-add/medication-reminder-add";
+import {MedicationReminderPage} from "../pages/medication-reminder/medication-reminder/medication-reminder";
+import {MedicationReminderAddPage} from "../pages/medication-reminder/medication-reminder-add/medication-reminder-add";
 import {AppointmentsPage} from "../pages/appointments/appointments";
 import {EvaluationPage} from "../pages/evaluation/evaluation";
-import { Ionic2RatingModule } from 'ionic2-rating';
-import {ConfigurationsPage} from "../pages/configuration/configurations/configurations";
+import {Ionic2RatingModule} from 'ionic2-rating';
+import {ConfigurationsPage} from "../pages/profile/configurations/configurations";
 import {IndexPage} from "../pages/index/index";
-import {SearchMedicationPage} from "../pages/medication/search-medication/search-medication";
+import {HelpPage} from "../pages/profile/help/help";
+import {ProfilePage} from "../pages/profile/profile/profile";
+import {SearchMedicationPage} from "../pages/medication-reminder/search-medication/search-medication";
+//wizard profile
+import {StepEmailPage} from "../pages/profile/profile-wizard/personal/step-email/step-email";
+import {StepGenderPage} from "../pages/profile/profile-wizard/personal/step-gender/step-gender";
+import {StepBirthPage} from "../pages/profile/profile-wizard/personal/step-birth/step-birth";
+import {StepBloodGroupPage} from "../pages/profile/profile-wizard/personal/step-blood-group/step-blood-group";
+import {StepMaritalStatusPage} from "../pages/profile/profile-wizard/personal/step-marital-status/step-marital-status";
+import {StepHeightPage} from "../pages/profile/profile-wizard/personal/step-height/step-height";
+import {StepWeightPage} from "../pages/profile/profile-wizard/personal/step-weight/step-weight";
+import {StepLocationPage} from "../pages/profile/profile-wizard/personal/step-location/step-location";
+//others
+import {MultiPickerModule} from "ion-multi-picker";
+import {InviteDoctorPage} from "../pages/invite-doctor/invite-doctor";
 
 @NgModule({
   declarations: [
@@ -36,12 +50,25 @@ import {SearchMedicationPage} from "../pages/medication/search-medication/search
     EvaluationPage,
     ConfigurationsPage,
     IndexPage,
-    SearchMedicationPage
+    SearchMedicationPage,
+    HelpPage,
+    ProfilePage,
+    //Wizard Pages,
+    StepEmailPage,
+    StepGenderPage,
+    StepBirthPage,
+    StepBloodGroupPage,
+    StepMaritalStatusPage,
+    StepHeightPage,
+    StepWeightPage,
+    StepLocationPage,
+    InviteDoctorPage
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    Ionic2RatingModule
+    Ionic2RatingModule,
+    MultiPickerModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -58,7 +85,19 @@ import {SearchMedicationPage} from "../pages/medication/search-medication/search
     EvaluationPage,
     ConfigurationsPage,
     IndexPage,
-    SearchMedicationPage
+    SearchMedicationPage,
+    HelpPage,
+    ProfilePage,
+    //Wizard Pages
+    StepEmailPage,
+    StepGenderPage,
+    StepBirthPage,
+    StepBloodGroupPage,
+    StepMaritalStatusPage,
+    StepHeightPage,
+    StepWeightPage,
+    StepLocationPage,
+    InviteDoctorPage
   ],
   providers: [
     StatusBar,
@@ -66,4 +105,5 @@ import {SearchMedicationPage} from "../pages/medication/search-medication/search
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
-export class AppModule {}
+export class AppModule {
+}

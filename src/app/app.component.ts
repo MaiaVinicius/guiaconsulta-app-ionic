@@ -4,10 +4,12 @@ import {StatusBar} from '@ionic-native/status-bar';
 import {SplashScreen} from '@ionic-native/splash-screen';
 
 import {HomePage} from '../pages/home/home';
-import {MedicationReminderPage} from '../pages/medication/medication-reminder/medication-reminder';
+import {MedicationReminderPage} from '../pages/medication-reminder/medication-reminder/medication-reminder';
 import {AppointmentsPage} from "../pages/appointments/appointments";
 import {EvaluationPage} from "../pages/evaluation/evaluation";
 import {IndexPage} from "../pages/index/index";
+import {ProfilePage} from "../pages/profile/profile/profile";
+import {InviteDoctorPage} from "../pages/invite-doctor/invite-doctor";
 
 @Component({
   templateUrl: 'app.html'
@@ -27,8 +29,10 @@ export class MyApp {
       {title: 'Busca', icon: 'search', component: HomePage},
       {title: 'Lembrete de medicamentos', icon: 'time', component: MedicationReminderPage},
       {title: 'Consultas', icon: 'calendar', component: AppointmentsPage},
+      {title: 'Perfil', icon: 'person', component: ProfilePage},
       {title: 'Avaliar', icon: 'start', component: EvaluationPage},
       {title: 'Index', icon: 'start', component: IndexPage},
+      {title: 'Convide seu medico', icon: 'add', component: InviteDoctorPage},
       // {title: 'Configurações', icon: 'settings', component: },
     ];
 
