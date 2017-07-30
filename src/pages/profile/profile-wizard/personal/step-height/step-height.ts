@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import {StepWeightPage} from "../step-weight/step-weight";
 
 /**
  * Generated class for the StepHeightPage page.
@@ -21,4 +22,12 @@ export class StepHeightPage {
     console.log('ionViewDidLoad StepHeightPage');
   }
 
+  nextStep() {
+    this.navCtrl.push(StepWeightPage, {},
+      {animate: true, animation: 'transition', duration: 500, direction: 'forward'});
+  }
+
+  backStep(){
+    this.navCtrl.pop({animate: true, animation: 'transition', duration: 500, direction: 'back'});
+  }
 }

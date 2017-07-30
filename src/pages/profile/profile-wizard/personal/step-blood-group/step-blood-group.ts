@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import {StepMaritalStatusPage} from "../step-marital-status/step-marital-status";
 
 /**
  * Generated class for the StepBloodGroupPage page.
@@ -21,4 +22,11 @@ export class StepBloodGroupPage {
     console.log('ionViewDidLoad StepBloodGroupPage');
   }
 
+  nextStep() {
+    this.navCtrl.push(StepMaritalStatusPage, {},
+      {animate: true, animation: 'transition', duration: 500, direction: 'forward'});
+  }
+  backStep(){
+    this.navCtrl.pop({animate: true, animation: 'transition', duration: 500, direction: 'back'});
+  }
 }

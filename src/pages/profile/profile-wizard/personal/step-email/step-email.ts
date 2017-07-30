@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import {Component} from '@angular/core';
+import {NavController, NavParams} from 'ionic-angular';
+import {StepGenderPage} from "../step-gender/step-gender";
 
 /**
  * Generated class for the StepEmailPage page.
@@ -21,4 +22,8 @@ export class StepEmailPage {
     console.log('ionViewDidLoad StepEmailPage');
   }
 
+  nextStep() {
+    this.navCtrl.push(StepGenderPage, {},
+      {animate: true, animation: 'transition', duration: 500, direction: 'forward'});
+  }
 }

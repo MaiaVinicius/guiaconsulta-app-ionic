@@ -7,12 +7,32 @@
 <ion-header>
 
   <ion-navbar hideBackButton="true">
-    <ion-title>step-email</ion-title>
+    <ion-buttons left>
+      <button  ion-button icon-only>
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-buttons right end>
+      <button (click)="nextStep()" ion-button>
+        Salvar
+      </button>
+    </ion-buttons>
+    <ion-title>Pessoal</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
+<ion-content padding class="profile-wizard">
+  <h1 class="profile-wizard-title">
+    Qual é o seu email?
+  </h1>
 
+  <div class="profile-wizard-response">
+    <ion-list>
+      <ion-item>
+        <ion-input type="email" placeholder="Digite seu email"></ion-input>
+      </ion-item>
+    </ion-list>
+  </div>
 </ion-content>
