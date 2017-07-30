@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {NavController, NavParams} from 'ionic-angular';
+import {StepEmailPage} from "../profile-wizard/personal/step-email/step-email";
 // import {FullProfilePage} from "../full-profile/full-profile";
 
 /**
@@ -23,7 +24,7 @@ export class ProfilePage {
   }
 
   goToFullProfile() {
-    // this.navCtrl.push(FullProfilePage);
+    this.navCtrl.push(StepEmailPage);
   }
 
 }
