@@ -31,4 +31,8 @@ export class SearchMedicationPage {
       this.searchBar.setFocus();
     }, 800);
   }
+
+  chooseMedication() {
+    this.viewCtrl.dismiss();
+  }
 }
