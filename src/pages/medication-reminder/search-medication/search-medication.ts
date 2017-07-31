@@ -1,7 +1,6 @@
 import {Component, ViewChild} from '@angular/core';
 import {NavController, NavParams, Searchbar, ViewController} from 'ionic-angular';
 import {Http} from "@angular/http";
-import 'rxjs/add/operator/map'
 
 /**
  * Generated class for the SearchMedicationPage page.
