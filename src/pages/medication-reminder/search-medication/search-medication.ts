@@ -17,7 +17,7 @@ export class SearchMedicationPage {
   @ViewChild('searchBarMedication') searchBar: Searchbar;
   endpoint = "http://integracao.api.memed.com.br/v1/apresentacoes";
 
-  constructor(private http: Http, public viewCtrl: ViewController, public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public viewCtrl: ViewController, public navCtrl: NavController, public navParams: NavParams) {
     // http://integracao.api.memed.com.br/v1/apresentacoes?filter%5Bcategoria%5D=industrializados&filter%5Bq%5D=dorflex&page%5Blimit%5D=100&api-key=OstiuP8TGS313ejeAUSyW6MWUufLaVHCmvrJnC4n1xk3uAnHQEIyFRyBEevpOzbG&secret-key=6f8CFVaKW88HU6Mk22iOgwxlETRI69Va0nB5MTg5BlBSwo9s3vvhsOoOreMT7P1D
 
       }
