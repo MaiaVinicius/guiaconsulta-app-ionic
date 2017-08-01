@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {NavController, NavParams} from 'ionic-angular';
 import {StepGenderPage} from "../step-gender/step-gender";
+import {ProfilePage} from "../../../profile/profile";
 
 /**
  * Generated class for the StepEmailPage page.
@@ -25,5 +26,9 @@ export class StepEmailPage {
   nextStep() {
     this.navCtrl.push(StepGenderPage, {},
       {animate: true, animation: 'transition', duration: 500, direction: 'forward'});
+  }
+
+  close() {
+    this.navCtrl.setRoot(ProfilePage, {}, {animate: true, animation: 'transition', duration: 500, direction: 'back'});
   }
 }
