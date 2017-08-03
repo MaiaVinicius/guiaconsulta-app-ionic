@@ -10,7 +10,7 @@ import { NavController, NavParams } from 'ionic-angular';
 
 @Component({
   selector: 'page-full-profile',
-  templateUrl: 'src/pages/profile/full-profile/full-profile.html',
+  templateUrl: 'full-profile.html',
 })
 export class FullProfilePage {
 
