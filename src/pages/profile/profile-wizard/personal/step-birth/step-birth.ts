@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {NavController, NavParams} from 'ionic-angular';
 import {StepBloodGroupPage} from "../step-blood-group/step-blood-group";
+import {ProfilePage} from "../../../profile/profile";
 
 /**
  * Generated class for the StepBirthPage page.
@@ -62,5 +63,9 @@ export class StepBirthPage {
   }
   backStep(){
     this.navCtrl.pop({animate: true, animation: 'transition', duration: 500, direction: 'back'});
+  }
+
+  close() {
+    this.navCtrl.setRoot(ProfilePage, {}, {animate: true, animation: 'transition', duration: 500, direction: 'back'});
   }
 }

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import {StepHeightPage} from "../step-height/step-height";
+import {ProfilePage} from "../../../profile/profile";
 
 /**
  * Generated class for the StepMaritalStatusPage page.
@@ -28,5 +29,9 @@ export class StepMaritalStatusPage {
   }
   backStep(){
     this.navCtrl.pop({animate: true, animation: 'transition', duration: 500, direction: 'back'});
+  }
+
+  close() {
+    this.navCtrl.setRoot(ProfilePage, {}, {animate: true, animation: 'transition', duration: 500, direction: 'back'});
   }
 }

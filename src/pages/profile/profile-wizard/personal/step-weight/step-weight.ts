@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import {ProfilePage} from "../../../profile/profile";
 
 /**
  * Generated class for the StepWeightPage page.
@@ -21,4 +22,8 @@ export class StepWeightPage {
     console.log('ionViewDidLoad StepWeightPage');
   }
 
+
+  close() {
+    this.navCtrl.setRoot(ProfilePage, {}, {animate: true, animation: 'transition', duration: 500, direction: 'back'});
+  }
 }
