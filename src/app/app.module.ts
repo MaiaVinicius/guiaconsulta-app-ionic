@@ -34,6 +34,7 @@ import {StepLocationPage} from "../pages/profile/profile-wizard/personal/step-lo
 //others
 import {MultiPickerModule} from "ion-multi-picker";
 import {InviteDoctorPage} from "../pages/invite-doctor/invite-doctor";
+import {LoginPage} from "../pages/login/login";
 
 @NgModule({
   declarations: [
@@ -62,7 +63,8 @@ import {InviteDoctorPage} from "../pages/invite-doctor/invite-doctor";
     StepHeightPage,
     StepWeightPage,
     StepLocationPage,
-    InviteDoctorPage
+    InviteDoctorPage,
+    LoginPage
   ],
   imports: [
     BrowserModule,
@@ -97,7 +99,8 @@ import {InviteDoctorPage} from "../pages/invite-doctor/invite-doctor";
     StepHeightPage,
     StepWeightPage,
     StepLocationPage,
-    InviteDoctorPage
+    InviteDoctorPage,
+    LoginPage
   ],
   providers: [
     StatusBar,

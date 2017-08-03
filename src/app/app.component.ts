@@ -10,6 +10,7 @@ import {EvaluationPage} from "../pages/evaluation/evaluation";
 import {IndexPage} from "../pages/index/index";
 import {ProfilePage} from "../pages/profile/profile/profile";
 import {InviteDoctorPage} from "../pages/invite-doctor/invite-doctor";
+import {LoginPage} from "../pages/login/login";
 
 @Component({
   templateUrl: 'app.html'
@@ -33,6 +34,7 @@ export class MyApp {
       {title: 'Avaliar', icon: 'start', component: EvaluationPage},
       {title: 'Index', icon: 'start', component: IndexPage},
       {title: 'Convide seu medico', icon: 'add', component: InviteDoctorPage},
+      {title: 'Login', icon: 'add', component: LoginPage},
       // {title: 'Configurações', icon: 'settings', component: },
     ];
 

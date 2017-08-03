@@ -1,0 +1,29 @@
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-2>
+        <ion-list>
+          <ion-item class="bt0">
+            <ion-label floating>País</ion-label>
+            <ion-input [(ngModel)]="countryCode" type="country"></ion-input>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+      <ion-col col-10>
+        <ion-list>
+          <ion-item class="bt0">
+            <ion-label floating>Celular</ion-label>
+            <ion-input type="tel"></ion-input>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-12>
+        <button margin-top ion-button block icon-left>
+          Continuar
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
