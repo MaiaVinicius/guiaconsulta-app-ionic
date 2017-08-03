@@ -10,7 +10,7 @@ import { NavController, NavParams } from 'ionic-angular';
 
 @Component({
   selector: 'page-dependent',
-  templateUrl: 'src/pages/profile/dependent/dependent/dependent.html',
+  templateUrl: 'dependent.html',
 })
 export class DependentPage {
 

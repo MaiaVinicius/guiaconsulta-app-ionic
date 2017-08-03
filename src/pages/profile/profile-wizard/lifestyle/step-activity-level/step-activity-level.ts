@@ -10,7 +10,7 @@ import { NavController, NavParams } from 'ionic-angular';
 
 @Component({
   selector: 'page-step-activity-level',
-  templateUrl: 'src/pages/profile/profile-wizard/lifestyle/step-activity-level/step-activity-level.html',
+  templateUrl: 'step-activity-level.html',
 })
 export class StepActivityLevelPage {
 

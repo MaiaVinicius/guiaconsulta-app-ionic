@@ -10,7 +10,7 @@ import { NavController, NavParams } from 'ionic-angular';
 
 @Component({
   selector: 'page-step-injuries',
-  templateUrl: 'src/pages/profile/profile-wizard/medical/step-injuries/step-injuries.html',
+  templateUrl: 'step-injuries.html',
 })
 export class StepInjuriesPage {
 

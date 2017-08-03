@@ -10,7 +10,7 @@ import { NavController, NavParams } from 'ionic-angular';
 
 @Component({
   selector: 'page-step-past-medications',
-  templateUrl: 'src/pages/profile/profile-wizard/medical/step-past-medications/step-past-medications.html',
+  templateUrl: 'step-past-medications.html',
 })
 export class StepPastMedicationsPage {
 

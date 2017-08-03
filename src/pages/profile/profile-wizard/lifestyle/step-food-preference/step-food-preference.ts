@@ -10,7 +10,7 @@ import { NavController, NavParams } from 'ionic-angular';
 
 @Component({
   selector: 'page-step-food-preference',
-  templateUrl: 'src/pages/profile/profile-wizard/lifestyle/step-food-preference/step-food-preference.html',
+  templateUrl: 'step-food-preference.html',
 })
 export class StepFoodPreferencePage {
 

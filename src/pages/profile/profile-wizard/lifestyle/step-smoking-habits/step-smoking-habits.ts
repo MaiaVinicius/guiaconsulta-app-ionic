@@ -10,7 +10,7 @@ import { NavController, NavParams } from 'ionic-angular';
 
 @Component({
   selector: 'page-step-smoking-habits',
-  templateUrl: 'src/pages/profile/profile-wizard/lifestyle/step-smoking-habits/step-smoking-habits.html',
+  templateUrl: 'step-smoking-habits.html',
 })
 export class StepSmokingHabitsPage {
 

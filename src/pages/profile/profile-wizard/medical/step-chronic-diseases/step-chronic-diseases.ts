@@ -10,7 +10,7 @@ import { NavController, NavParams } from 'ionic-angular';
 
 @Component({
   selector: 'page-step-chronic-diseases',
-  templateUrl: 'src/pages/profile/profile-wizard/medical/step-chronic-diseases/step-chronic-diseases.html',
+  templateUrl: 'step-chronic-diseases.html',
 })
 export class StepChronicDiseasesPage {
 

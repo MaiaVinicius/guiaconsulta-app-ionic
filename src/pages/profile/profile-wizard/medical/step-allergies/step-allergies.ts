@@ -10,7 +10,7 @@ import { NavController, NavParams } from 'ionic-angular';
 
 @Component({
   selector: 'page-step-allergies',
-  templateUrl: 'src/pages/profile/profile-wizard/medical/step-allergies/step-allergies.html',
+  templateUrl: 'step-allergies.html',
 })
 export class StepAllergiesPage {
 
