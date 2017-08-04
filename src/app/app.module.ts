@@ -35,6 +35,7 @@ import {StepLocationPage} from "../pages/profile/profile-wizard/personal/step-lo
 import {MultiPickerModule} from "ion-multi-picker";
 import {InviteDoctorPage} from "../pages/invite-doctor/invite-doctor";
 import {LoginPage} from "../pages/login/login";
+import { SearchProvider } from '../providers/search/search';
 
 @NgModule({
   declarations: [
@@ -105,7 +106,8 @@ import {LoginPage} from "../pages/login/login";
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    SearchProvider
   ]
 })
 export class AppModule {
