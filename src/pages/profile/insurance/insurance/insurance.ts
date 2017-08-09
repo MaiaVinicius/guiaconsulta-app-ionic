@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import {Component} from '@angular/core';
+import {ModalController, NavController, NavParams} from 'ionic-angular';
+import {InsuranceAddPage} from "../insurance-add/insurance-add";
 
 /**
  * Generated class for the InsurancePage page.
@@ -14,11 +15,15 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class InsurancePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public modalCtrl: ModalController, public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad InsurancePage');
   }
 
+  addInsurance() {
+    let modal = this.modalCtrl.create(InsuranceAddPage);
+    modal.present();
+  }
 }

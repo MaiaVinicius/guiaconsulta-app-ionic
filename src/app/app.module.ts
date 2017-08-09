@@ -48,6 +48,9 @@ import {FilePath} from "@ionic-native/file-path";
 import {DependentPage} from "../pages/profile/dependent/dependent/dependent";
 import {DependentAddPage} from "../pages/profile/dependent/dependent-add/dependent-add";
 import {SearchDoctorPage} from "../pages/search-doctor/search-doctor";
+import {InsuranceAddPage} from "../pages/profile/insurance/insurance-add/insurance-add";
+import {InsurancePage} from "../pages/profile/insurance/insurance/insurance";
+import {InsuranceSearchPage} from "../pages/profile/insurance/insurance-search/insurance-search";
 
 @NgModule({
   declarations: [
@@ -72,6 +75,9 @@ import {SearchDoctorPage} from "../pages/search-doctor/search-doctor";
     MedicalRecordPage,
     DependentPage,
     DependentAddPage,
+    InsuranceAddPage,
+    InsurancePage,
+    InsuranceSearchPage,
     SearchDoctorPage,
     //Wizard Pages,
     StepEmailPage,
@@ -87,7 +93,10 @@ import {SearchDoctorPage} from "../pages/search-doctor/search-doctor";
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp),
+    IonicModule.forRoot(MyApp, {
+      backButtonText: 'Voltar',
+      pageTransition: 'ios-transition'
+    }),
     Ionic2RatingModule,
     MultiPickerModule
   ],
@@ -114,6 +123,9 @@ import {SearchDoctorPage} from "../pages/search-doctor/search-doctor";
     MedicalRecordPage,
     DependentPage,
     DependentAddPage,
+    InsuranceAddPage,
+    InsurancePage,
+    InsuranceSearchPage,
     SearchDoctorPage,
     //Wizard Pages
     StepEmailPage,
@@ -139,5 +151,6 @@ import {SearchDoctorPage} from "../pages/search-doctor/search-doctor";
     FilePath
   ]
 })
+
 export class AppModule {
 }

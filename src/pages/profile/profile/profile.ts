@@ -4,6 +4,8 @@ import {StepEmailPage} from "../profile-wizard/personal/step-email/step-email";
 import {FavoriteDoctorsPage} from "../favorite-doctors/favorite-doctors";
 import {MedicalRecordPage} from "../medical-record/medical-record/medical-record";
 import {DependentPage} from "../dependent/dependent/dependent";
+import {InsurancePage} from "../insurance/insurance/insurance";
+import {MedicationReminderPage} from "../../medication-reminder/medication-reminder/medication-reminder";
 // import {FullProfilePage} from "../full-profile/full-profile";
 
 /**
@@ -43,7 +45,10 @@ export class ProfilePage {
   }
 
   goToInsurances() {
-    this.navCtrl.push(DependentPage);
+    this.navCtrl.push(InsurancePage);
   }
 
+  goToMedicationReminder() {
+    this.navCtrl.push(MedicationReminderPage);
+  }
 }

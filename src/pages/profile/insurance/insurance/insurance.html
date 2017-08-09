@@ -1,5 +1,5 @@
 <!--
-  Generated template for the InsurancePage page.
+  Generated template for the MedicationReminderPage page.
 
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
@@ -7,12 +7,22 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>insurance</ion-title>
+    <ion-title>Convênios</ion-title>
   </ion-navbar>
 
 </ion-header>
-
-
-<ion-content padding>
-
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      Bradesco
+    </ion-card-header>
+    <ion-card-content>
+      DELTA
+    </ion-card-content>
+  </ion-card>
 </ion-content>
+<ion-footer no-shadow padding>
+  <button (click)="addInsurance()" ion-button block icon-start>
+    Adicionar convênio
+  </button>
+</ion-footer>

@@ -10,7 +10,7 @@
     <ion-title>Favoritos</ion-title>
     <ion-buttons right start>
       <button (click)="searchDoctor()" ion-button>
-        <ion-icon name="search"></ion-icon>
+        <ion-icon class="custom-icon" name="search"></ion-icon>
       </button>
     </ion-buttons>
   </ion-navbar>
@@ -20,7 +20,7 @@
 
 <ion-content>
   <ion-list>
-    <button ion-item (click)="goToAppointmentInfo()">
+    <button ion-item (click)="goToDoctorPage()">
       <ion-avatar item-start>
         <img src="assets/img/icon-boy.svg">
       </ion-avatar>

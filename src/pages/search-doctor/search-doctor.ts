@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import {Component, ViewChild} from '@angular/core';
+import {NavController, NavParams, Searchbar, ViewController} from 'ionic-angular';
 
 /**
  * Generated class for the SearchDoctorPage page.
@@ -13,12 +13,22 @@ import { NavController, NavParams } from 'ionic-angular';
   templateUrl: 'search-doctor.html',
 })
 export class SearchDoctorPage {
+  @ViewChild('searchBarProfessional') searchBarProfessional: Searchbar;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public viewCtrl: ViewController, public navCtrl: NavController, public navParams: NavParams) {
+  }
+
+  ngOnInit() {
+    setTimeout(() => {
+      this.searchBarProfessional.setFocus();
+    }, 600);
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad SearchDoctorPage');
   }
 
+  dismiss() {
+    this.viewCtrl.dismiss();
+  }
 }

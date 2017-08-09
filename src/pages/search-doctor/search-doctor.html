@@ -6,13 +6,26 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>search-doctor</ion-title>
-  </ion-navbar>
+  <ion-toolbar>
+    <ion-title></ion-title>
+    <ion-searchbar #searchBarProfessional placeholder="Busque por nome do profissional" [(ngModel)]="professional"
+                   [showCancelButton]="true" (ionCancel)="dismiss()" (ionInput)="updateSearch()"></ion-searchbar>
+  </ion-toolbar>
 
 </ion-header>
 
 
-<ion-content padding>
-
+<ion-content>
+  <ion-list>
+    <button ion-item (click)="goToDoctorPage()">
+      <ion-avatar item-start>
+        <img src="assets/img/icon-boy.svg">
+      </ion-avatar>
+      João da Silva
+      <p>Cardiologista</p>
+      <ion-note item-end>
+        PROFISSIONAL
+      </ion-note>
+    </button>
+  </ion-list>
 </ion-content>
