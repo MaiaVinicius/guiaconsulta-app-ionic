@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import {SearchDoctorPage} from "../../search-doctor/search-doctor";
 
 /**
  * Generated class for the FavoriteDoctorsPage page.
@@ -22,4 +23,7 @@ export class FavoriteDoctorsPage {
     console.log('ionViewDidLoad FavoriteDoctorsPage');
   }
 
+  searchDoctor(){
+    this.navCtrl.push(SearchDoctorPage);
+  }
 }

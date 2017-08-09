@@ -47,6 +47,7 @@ import {Camera} from "@ionic-native/camera";
 import {FilePath} from "@ionic-native/file-path";
 import {DependentPage} from "../pages/profile/dependent/dependent/dependent";
 import {DependentAddPage} from "../pages/profile/dependent/dependent-add/dependent-add";
+import {SearchDoctorPage} from "../pages/search-doctor/search-doctor";
 
 @NgModule({
   declarations: [
@@ -71,6 +72,7 @@ import {DependentAddPage} from "../pages/profile/dependent/dependent-add/depende
     MedicalRecordPage,
     DependentPage,
     DependentAddPage,
+    SearchDoctorPage,
     //Wizard Pages,
     StepEmailPage,
     StepGenderPage,
@@ -112,6 +114,7 @@ import {DependentAddPage} from "../pages/profile/dependent/dependent-add/depende
     MedicalRecordPage,
     DependentPage,
     DependentAddPage,
+    SearchDoctorPage,
     //Wizard Pages
     StepEmailPage,
     StepGenderPage,
