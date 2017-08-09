@@ -2,23 +2,23 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
 /**
- * Generated class for the MedicalRecordPage page.
+ * Generated class for the AppointmentInfoPage page.
  *
  * See http://ionicframework.com/docs/components/#navigation for more info
  * on Ionic pages and navigation.
  */
 
 @Component({
-  selector: 'page-medical-record',
-  templateUrl: 'medical-record.html',
+  selector: 'page-appointment-info',
+  templateUrl: 'appointment-info.html',
 })
-export class MedicalRecordPage {
+export class AppointmentInfoPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad MedicalRecordPage');
+    console.log('ionViewDidLoad AppointmentInfoPage');
   }
 
 }

@@ -35,7 +35,18 @@ import {StepLocationPage} from "../pages/profile/profile-wizard/personal/step-lo
 import {MultiPickerModule} from "ion-multi-picker";
 import {InviteDoctorPage} from "../pages/invite-doctor/invite-doctor";
 import {LoginPage} from "../pages/login/login";
-import { SearchProvider } from '../providers/search/search';
+import {SearchProvider} from '../providers/search/search';
+import {AppointmentInfoPage} from "../pages/appointment-info/appointment-info";
+import {FavoriteDoctorsPage} from "../pages/favorite-doctors/favorite-doctors";
+import {MedicalRecordPage} from "../pages/profile/medical-record/medical-record/medical-record";
+
+//
+import {File} from "@ionic-native/file";
+import {Transfer} from "@ionic-native/transfer";
+import {Camera} from "@ionic-native/camera";
+import {FilePath} from "@ionic-native/file-path";
+import {DependentPage} from "../pages/profile/dependent/dependent/dependent";
+import {DependentAddPage} from "../pages/profile/dependent/dependent-add/dependent-add";
 
 @NgModule({
   declarations: [
@@ -49,12 +60,17 @@ import { SearchProvider } from '../providers/search/search';
     MedicationReminderPage,
     MedicationReminderAddPage,
     AppointmentsPage,
+    AppointmentInfoPage,
     EvaluationPage,
     ConfigurationsPage,
     IndexPage,
     SearchMedicationPage,
     HelpPage,
     ProfilePage,
+    FavoriteDoctorsPage,
+    MedicalRecordPage,
+    DependentPage,
+    DependentAddPage,
     //Wizard Pages,
     StepEmailPage,
     StepGenderPage,
@@ -85,12 +101,17 @@ import { SearchProvider } from '../providers/search/search';
     MedicationReminderPage,
     MedicationReminderAddPage,
     AppointmentsPage,
+    AppointmentInfoPage,
     EvaluationPage,
     ConfigurationsPage,
     IndexPage,
     SearchMedicationPage,
     HelpPage,
     ProfilePage,
+    FavoriteDoctorsPage,
+    MedicalRecordPage,
+    DependentPage,
+    DependentAddPage,
     //Wizard Pages
     StepEmailPage,
     StepGenderPage,
@@ -107,7 +128,12 @@ import { SearchProvider } from '../providers/search/search';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    SearchProvider
+    SearchProvider,
+
+    File,
+    Transfer,
+    Camera,
+    FilePath
   ]
 })
 export class AppModule {

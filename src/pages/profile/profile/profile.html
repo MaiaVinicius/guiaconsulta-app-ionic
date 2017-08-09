@@ -26,15 +26,19 @@
 
   <ion-list>
 
-    <button ion-item>
+    <button ion-item (click)="goToFavoriteDoctors()">
       Meus profissionais
     </button>
 
-    <button ion-item>
-      Consultas
+    <button ion-item (click)="goToDependents()">
+      Dependentes
     </button>
 
-    <button ion-item>
+    <button ion-item (click)="goToInsurances()">
+      Convênios
+    </button>
+
+    <button ion-item (click)="goToMedicalRecord()">
       Prontuarios
     </button>
 

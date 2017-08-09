@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import {Component} from '@angular/core';
+import {ModalController, NavController, NavParams} from 'ionic-angular';
+import {DependentAddPage} from "../dependent-add/dependent-add";
 
 /**
  * Generated class for the DependentPage page.
@@ -14,11 +15,15 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class DependentPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public modalCtrl: ModalController, public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad DependentPage');
   }
 
+  addDependent() {
+    let modal = this.modalCtrl.create(DependentAddPage);
+    modal.present();
+  }
 }

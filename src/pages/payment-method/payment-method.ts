@@ -1,5 +1,5 @@
 import {Component, ViewChild} from '@angular/core';
-import {NavController, NavParams, Searchbar} from 'ionic-angular';
+import {NavController, NavParams, Searchbar, ViewController} from 'ionic-angular';
 
 /**
  * Generated class for the PaymentMethodPage page.
@@ -16,7 +16,7 @@ export class PaymentMethodPage {
   searchingInsurance = false;
   @ViewChild('searchBarInsurance') searchBar: Searchbar;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public viewCtrl: ViewController,public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
@@ -30,7 +30,8 @@ export class PaymentMethodPage {
     }, 200);
   }
 
-  cancelSearchInsurance() {
-    this.searchingInsurance = false;
+  dismiss() {
+    this.viewCtrl.dismiss();
   }
+
 }

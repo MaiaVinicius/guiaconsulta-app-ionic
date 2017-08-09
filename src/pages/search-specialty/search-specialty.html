@@ -1,12 +1,25 @@
 <ion-header>
   <ion-toolbar>
     <ion-title></ion-title>
-    <ion-searchbar #searchSpecialty placeholder="Busque por especialidade..."
+    <ion-searchbar #searchSpecialty placeholder="Especialidade, profissional ou procedimento"
                    [showCancelButton]="true" (ionCancel)="dismiss()"></ion-searchbar>
   </ion-toolbar>
 </ion-header>
 <ion-content>
   <ion-list>
+    <ion-item-divider color="light">Buscado recentemente</ion-item-divider>
+    <button ion-item tappable (click)="chooseSpecialty(item)">
+      Cardiologista
 
+      <ion-note item-end>
+        ESPECIALIDADE
+      </ion-note>
+    </button>
+    <button ion-item tappable (click)="chooseSpecialty(item)">
+      Clinico geral
+      <ion-note item-end>
+        ESPECIALIDADE
+      </ion-note>
+    </button>
   </ion-list>
 </ion-content>

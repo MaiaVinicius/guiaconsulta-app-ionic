@@ -1,5 +1,21 @@
 page-home {
-  .fixed-content{
 
+  .search-background {
+    background-image: url("../../assets/img/fundo-busca.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: 35px;
+  }
+
+
+
+  .pt150 {
+    margin-top: 150px;
+  }
+}
+
+.platform-android {
+  .search-background {
+    margin-top: 55px !important;
   }
 }

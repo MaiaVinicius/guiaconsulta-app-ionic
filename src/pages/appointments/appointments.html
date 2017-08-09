@@ -30,7 +30,7 @@
 
   <div [ngSwitch]="reference">
     <ion-list *ngSwitchCase="'previous'">
-      <button ion-item>
+      <button ion-item (click)="goToAppointmentInfo()">
         <ion-avatar item-start>
           <img src="assets/img/icon-boy.svg">
         </ion-avatar>

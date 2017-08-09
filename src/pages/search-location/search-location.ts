@@ -30,7 +30,7 @@ export class SearchLocationPage {
   ngOnInit() {
     setTimeout(() => {
       this.searchBar.setFocus();
-    }, 800);
+    }, 600);
   }
 
 

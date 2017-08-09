@@ -29,6 +29,6 @@ export class SearchSpecialtyPage {
   ngOnInit() {
     setTimeout(() => {
       this.searchBar.setFocus();
-    }, 800);
+    }, 600);
   }
 }

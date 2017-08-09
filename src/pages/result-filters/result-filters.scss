@@ -1,3 +1,31 @@
 page-result-filters {
+  .lower {
+    text-transform: lowercase;
+  }
 
+  .item-select {
+    .item-inner {
+      padding-left: 15px;
+    }
+  }
+}
+
+.platform-ios {
+  .item-select {
+    .label {
+      color: #333;
+      font-weight: 500;
+      text-transform: uppercase;
+    }
+  }
+}
+
+.platform-android {
+  .item-select {
+    .label {
+      color: #757575;
+      font-weight:normal;
+      font-size: 1.4rem;
+    }
+  }
 }

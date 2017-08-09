@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import {Component} from '@angular/core';
+import {NavController, NavParams} from 'ionic-angular';
+import {AppointmentInfoPage} from "../appointment-info/appointment-info";
 
 /**
  * Generated class for the AppointmentsPage page.
@@ -23,4 +24,11 @@ export class AppointmentsPage {
     console.log('ionViewDidLoad AppointmentsPage');
   }
 
+  goToAppointmentInfo() {
+    this.navCtrl.push(AppointmentInfoPage);
+  }
+
+  doRefresh(){
+
+  }
 }

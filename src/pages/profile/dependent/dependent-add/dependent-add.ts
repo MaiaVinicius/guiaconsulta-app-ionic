@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import {Component, ViewChild} from '@angular/core';
+import {NavController, NavParams, ViewController} from 'ionic-angular';
 
 /**
  * Generated class for the DependentAddPage page.
@@ -13,12 +13,18 @@ import { NavController, NavParams } from 'ionic-angular';
   templateUrl: 'dependent-add.html',
 })
 export class DependentAddPage {
+  @ViewChild('inputName') inputName;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public viewCtrl: ViewController, public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad DependentAddPage');
+    setTimeout(() => {
+      this.inputName.setFocus();
+    }, 500);
   }
 
+  dismiss() {
+    this.viewCtrl.dismiss();
+  }
 }

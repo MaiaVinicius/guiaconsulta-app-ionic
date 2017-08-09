@@ -1,5 +1,67 @@
-<ion-content padding class="popover-page">
-  <div class="text-to-change">
-    oi
+<ion-content class="popover-page">
+  <div>
+    <ion-list>
+      <ion-list-header>
+        Distância
+        <ion-badge item-end class="lower">{{distance}} km</ion-badge>
+      </ion-list-header>
+      <ion-item>
+        <ion-range [(ngModel)]="distance" min="5">
+          <!--<ion-icon range-left small name="sunny"></ion-icon>-->
+          <!--<ion-icon range-right name="sunny"></ion-icon>-->
+        </ion-range>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>Ordenar por</ion-label>
+        <ion-select [(ngModel)]="orderBy" interface="popover">
+          <ion-option value="minorDistance">Menor distância</ion-option>
+          <ion-option value="greaterClassification">Maior classificação</ion-option>
+          <ion-option value="minorPrice">Menor valor</ion-option>
+          <ion-option value="closestDate">Data mais próxima</ion-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-list-header>
+        Valor máximo
+        <ion-badge item-end>R$ {{maxPrice}},00</ion-badge>
+      </ion-list-header>
+      <ion-item>
+        <ion-range step="25" min="50" max="1000" [(ngModel)]="maxPrice">
+          <!--<ion-icon range-left small name="sunny"></ion-icon>-->
+          <!--<ion-icon range-right name="sunny"></ion-icon>-->
+        </ion-range>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked>Sexo</ion-label>
+        <ion-select [(ngModel)]="gender" interface="popover">
+          <ion-option value="0">Qualquer</ion-option>
+          <ion-option value="1">Masculino</ion-option>
+          <ion-option value="2">Feminino</ion-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked>Dias</ion-label>
+        <ion-select [(ngModel)]="daysInWeek" multiple="true" cancelText="Cancelar" okText="Definir" interface="popover">
+          <ion-option value="1" selected="true">Segunda-feira</ion-option>
+          <ion-option value="2" selected="true">Terça-feira</ion-option>
+          <ion-option value="3" selected="true">Quarta-feira</ion-option>
+          <ion-option value="4" selected="true">Quinta-feira</ion-option>
+          <ion-option value="5" selected="true">Sexta-feira</ion-option>
+          <ion-option value="6" selected="true">Sábado</ion-option>
+          <ion-option value="0">Domingo</ion-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked>Horários</ion-label>
+        <ion-select [(ngModel)]="timeInterval" multiple="true" cancelText="Cancelar" okText="Definir">
+          <ion-option value="1" selected="true">Manhã</ion-option>
+          <ion-option value="2" selected="true">Tarde</ion-option>
+          <ion-option value="3" selected="true">Noite</ion-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
   </div>
 </ion-content>
