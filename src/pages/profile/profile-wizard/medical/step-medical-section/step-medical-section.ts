@@ -2,23 +2,23 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
 /**
- * Generated class for the FullProfilePage page.
+ * Generated class for the StepMedicalSectionPage page.
  *
  * See http://ionicframework.com/docs/components/#navigation for more info
  * on Ionic pages and navigation.
  */
 
 @Component({
-  selector: 'page-full-profile',
-  templateUrl: 'full-profile.html',
+  selector: 'page-step-medical-section',
+  templateUrl: 'step-medical-section.html',
 })
-export class FullProfilePage {
+export class StepMedicalSectionPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad FullProfilePage');
+    console.log('ionViewDidLoad StepMedicalSectionPage');
   }
 
 }

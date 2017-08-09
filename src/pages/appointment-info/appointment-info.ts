@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import {DoctorProfilePage} from "../doctor-profile/doctor-profile";
 
 /**
  * Generated class for the AppointmentInfoPage page.
@@ -20,5 +21,7 @@ export class AppointmentInfoPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad AppointmentInfoPage');
   }
-
+  goToDoctorPage() {
+    this.navCtrl.push(DoctorProfilePage);
+  }
 }

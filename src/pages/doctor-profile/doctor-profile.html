@@ -7,12 +7,47 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>doctor-profile</ion-title>
+    <ion-title>Dr. John Doe</ion-title>
+    <ion-buttons right start>
+      <button (click)="backStep()" ion-button>
+        <ion-icon class="custom-icon" ios="ios-star-outline" md="md-star-outline"></ion-icon>
+      </button>
+      <button (click)="nextStep()" ion-button>
+        <ion-icon class="custom-icon" ios="ios-share-outline" md="md-share"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
+  <ion-item>
+    <ion-avatar item-start>
+      <img src="assets/img/icon-boy.svg">
+    </ion-avatar>
+    João da Silva
+    <p>Cardiologista</p>
+  </ion-item>
 
+  <ion-list>
+    <ion-item>
+      <ion-icon name="ios-briefcase-outline" item-start></ion-icon>
+      <strong>13 anos</strong> de experiência
+    </ion-item>
+    <ion-item>
+      <ion-icon name="ios-cash-outline" item-start></ion-icon>
+      <strong>R$ 150,00</strong> Valor da Consulta
+    </ion-item>
+    <ion-item>
+      <ion-icon name="ios-home-outline" item-start></ion-icon>
+      <strong>Consultorio do Dr</strong>
+      <p>Rio de Janeiro</p>
+    </ion-item>
+    <ion-item>
+      <ion-icon ios="ios-time-outline" item-start></ion-icon>
+      <strong>Consultorio do Dr</strong>
+      <p>Rio de Janeiro</p>
+    </ion-item>
+  </ion-list>
 </ion-content>

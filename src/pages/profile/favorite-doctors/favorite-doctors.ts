@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import {SearchDoctorPage} from "../../search-doctor/search-doctor";
+import {DoctorProfilePage} from "../../doctor-profile/doctor-profile";
 
 /**
  * Generated class for the FavoriteDoctorsPage page.
@@ -25,5 +26,9 @@ export class FavoriteDoctorsPage {
 
   searchDoctor(){
     this.navCtrl.push(SearchDoctorPage);
+  }
+
+  goToDoctorPage() {
+    this.navCtrl.push(DoctorProfilePage);
   }
 }

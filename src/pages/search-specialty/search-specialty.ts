@@ -1,5 +1,6 @@
 import {Component, ViewChild} from '@angular/core';
 import {NavController, NavParams, Searchbar, ViewController} from 'ionic-angular';
+import {DoctorProfilePage} from "../doctor-profile/doctor-profile";
 
 /**
  * Generated class for the SearchSpecialtyPage page.
@@ -30,5 +31,9 @@ export class SearchSpecialtyPage {
     setTimeout(() => {
       this.searchBar.setFocus();
     }, 600);
+  }
+
+  goToDoctorPage() {
+    this.navCtrl.push(DoctorProfilePage);
   }
 }

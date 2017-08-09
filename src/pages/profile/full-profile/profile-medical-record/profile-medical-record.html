@@ -1,0 +1,12 @@
+<ion-content>
+  <ion-list>
+    <button ion-item *ngFor="let field of fields">
+      <div class="profile-label">
+        {{field.name}}
+      </div>
+      <ion-note item-end>
+        {{field.note}}
+      </ion-note>
+    </button>
+  </ion-list>
+</ion-content>

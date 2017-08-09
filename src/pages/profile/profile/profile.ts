@@ -6,6 +6,7 @@ import {MedicalRecordPage} from "../medical-record/medical-record/medical-record
 import {DependentPage} from "../dependent/dependent/dependent";
 import {InsurancePage} from "../insurance/insurance/insurance";
 import {MedicationReminderPage} from "../../medication-reminder/medication-reminder/medication-reminder";
+import {FullProfilePage} from "../full-profile/full-profile/full-profile";
 // import {FullProfilePage} from "../full-profile/full-profile";
 
 /**
@@ -29,6 +30,10 @@ export class ProfilePage {
   }
 
   goToFullProfile() {
+    this.navCtrl.push(FullProfilePage);
+  }
+
+  goToWizardProfile() {
     this.navCtrl.push(StepEmailPage);
   }
 

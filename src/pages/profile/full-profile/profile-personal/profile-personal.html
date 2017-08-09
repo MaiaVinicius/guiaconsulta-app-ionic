@@ -1,0 +1,17 @@
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <div class="profile-label">
+        Nome
+      </div>
+    </ion-item>
+    <button (click)="goToPage(field.page)" ion-item *ngFor="let field of fields">
+      <div class="profile-label">
+        {{field.name}}
+      </div>
+      <ion-note item-end>
+        Preencher
+      </ion-note>
+    </button>
+  </ion-list>
+</ion-content>

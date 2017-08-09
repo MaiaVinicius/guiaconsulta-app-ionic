@@ -51,6 +51,12 @@ import {SearchDoctorPage} from "../pages/search-doctor/search-doctor";
 import {InsuranceAddPage} from "../pages/profile/insurance/insurance-add/insurance-add";
 import {InsurancePage} from "../pages/profile/insurance/insurance/insurance";
 import {InsuranceSearchPage} from "../pages/profile/insurance/insurance-search/insurance-search";
+import {DoctorProfilePage} from "../pages/doctor-profile/doctor-profile";
+import {FullProfilePage} from "../pages/profile/full-profile/full-profile/full-profile";
+import {SuperTabsController, SuperTabsModule} from 'ionic2-super-tabs';
+import {ProfileLifestylePage} from "../pages/profile/full-profile/profile-lifestyle/profile-lifestyle";
+import {ProfileMedicalRecordPage} from "../pages/profile/full-profile/profile-medical-record/profile-medical-record";
+import {ProfilePersonalPage} from "../pages/profile/full-profile/profile-personal/profile-personal";
 
 @NgModule({
   declarations: [
@@ -71,6 +77,7 @@ import {InsuranceSearchPage} from "../pages/profile/insurance/insurance-search/i
     SearchMedicationPage,
     HelpPage,
     ProfilePage,
+    FullProfilePage,
     FavoriteDoctorsPage,
     MedicalRecordPage,
     DependentPage,
@@ -79,6 +86,7 @@ import {InsuranceSearchPage} from "../pages/profile/insurance/insurance-search/i
     InsurancePage,
     InsuranceSearchPage,
     SearchDoctorPage,
+    DoctorProfilePage,
     //Wizard Pages,
     StepEmailPage,
     StepGenderPage,
@@ -88,6 +96,9 @@ import {InsuranceSearchPage} from "../pages/profile/insurance/insurance-search/i
     StepHeightPage,
     StepWeightPage,
     StepLocationPage,
+    ProfileLifestylePage,
+    ProfileMedicalRecordPage,
+    ProfilePersonalPage,
     InviteDoctorPage,
     LoginPage
   ],
@@ -95,10 +106,12 @@ import {InsuranceSearchPage} from "../pages/profile/insurance/insurance-search/i
     BrowserModule,
     IonicModule.forRoot(MyApp, {
       backButtonText: 'Voltar',
+      cancelButtonText: 'Cancelar',
       pageTransition: 'ios-transition'
     }),
     Ionic2RatingModule,
-    MultiPickerModule
+    MultiPickerModule,
+    SuperTabsModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -119,6 +132,7 @@ import {InsuranceSearchPage} from "../pages/profile/insurance/insurance-search/i
     SearchMedicationPage,
     HelpPage,
     ProfilePage,
+    FullProfilePage,
     FavoriteDoctorsPage,
     MedicalRecordPage,
     DependentPage,
@@ -127,6 +141,7 @@ import {InsuranceSearchPage} from "../pages/profile/insurance/insurance-search/i
     InsurancePage,
     InsuranceSearchPage,
     SearchDoctorPage,
+    DoctorProfilePage,
     //Wizard Pages
     StepEmailPage,
     StepGenderPage,
@@ -136,8 +151,11 @@ import {InsuranceSearchPage} from "../pages/profile/insurance/insurance-search/i
     StepHeightPage,
     StepWeightPage,
     StepLocationPage,
+    ProfileLifestylePage,
+    ProfileMedicalRecordPage,
+    ProfilePersonalPage,
     InviteDoctorPage,
-    LoginPage
+    LoginPage,
   ],
   providers: [
     StatusBar,
@@ -148,7 +166,8 @@ import {InsuranceSearchPage} from "../pages/profile/insurance/insurance-search/i
     File,
     Transfer,
     Camera,
-    FilePath
+    FilePath,
+    SuperTabsController
   ]
 })
 

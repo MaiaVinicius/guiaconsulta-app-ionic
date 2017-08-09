@@ -1,0 +1,21 @@
+page-full-profile {
+  .content-md, .content-ios {
+    color: #fff
+  }
+
+  .header-md::after, .tabs-md[tabsPlacement="top"] > .tabbar::after, .footer-md::before, .tabs-md[tabsPlacement="bottom"] > .tabbar::before {
+    background-image: none;
+  }
+
+  .header-ios .toolbar-background-ios, .footer-ios .toolbar-background-ios {
+    border-style: none;
+  }
+
+  .button-md-primary.indicator{
+    background-color: #fff;
+  }
+}
+
+.profile-label{
+  color: #899198
+}
