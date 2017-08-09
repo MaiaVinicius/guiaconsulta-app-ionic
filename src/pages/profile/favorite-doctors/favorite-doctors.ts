@@ -18,6 +18,7 @@ export class FavoriteDoctorsPage {
   }
 
   ionViewDidLoad() {
+
     console.log('ionViewDidLoad FavoriteDoctorsPage');
   }
 

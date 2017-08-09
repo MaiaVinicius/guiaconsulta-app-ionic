@@ -37,7 +37,7 @@ import {InviteDoctorPage} from "../pages/invite-doctor/invite-doctor";
 import {LoginPage} from "../pages/login/login";
 import {SearchProvider} from '../providers/search/search';
 import {AppointmentInfoPage} from "../pages/appointment-info/appointment-info";
-import {FavoriteDoctorsPage} from "../pages/favorite-doctors/favorite-doctors";
+import {FavoriteDoctorsPage} from "../pages/profile/favorite-doctors/favorite-doctors";
 import {MedicalRecordPage} from "../pages/profile/medical-record/medical-record/medical-record";
 
 //
