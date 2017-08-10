@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import {Component} from '@angular/core';
+import {NavController, NavParams, ViewController} from 'ionic-angular';
 import {StepHeightPage} from "../step-height/step-height";
 import {ProfilePage} from "../../../profile/profile";
 
@@ -15,23 +15,30 @@ import {ProfilePage} from "../../../profile/profile";
   templateUrl: 'step-marital-status.html',
 })
 export class StepMaritalStatusPage {
+  public fillSingle;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad StepMaritalStatusPage');
+  constructor(public viewCtrl: ViewController, public navCtrl: NavController, public navParams: NavParams) {
+    this.fillSingle = navParams.get("fillSingle");
   }
 
   nextStep() {
-    this.navCtrl.push(StepHeightPage, {},
-      {animate: true, animation: 'transition', duration: 500, direction: 'forward'});
-  }
-  backStep(){
-    this.navCtrl.pop({animate: true, animation: 'transition', duration: 500, direction: 'back'});
+    if (this.fillSingle) {
+      this.viewCtrl.dismiss();
+    } else {
+      this.navCtrl.push(StepHeightPage, {},
+        {animate: true, animation: 'transition', duration: 500, direction: 'forward'});
+    }
   }
 
   close() {
-    this.navCtrl.setRoot(ProfilePage, {}, {animate: true, animation: 'transition', duration: 500, direction: 'back'});
+    if (this.fillSingle) {
+      this.viewCtrl.dismiss();
+    } else {
+      this.navCtrl.setRoot(ProfilePage, {}, {animate: true, animation: 'transition', duration: 500, direction: 'back'});
+    }
+  }
+
+  backStep() {
+    this.navCtrl.pop({animate: true, animation: 'transition', duration: 500, direction: 'back'});
   }
 }

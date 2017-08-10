@@ -55,7 +55,7 @@
 
 }
 
-.item-input, .item-select, .item-range{
+.item-input, .item-select, .item-range,.item-datetime{
   padding-left: 0!important;
 }
 
@@ -109,7 +109,7 @@ ion-note{
     background-color: #007aff;
   }
 
-  .item-input, .item-multi-picker{
+  .item-input, .item-multi-picker, .item-datetime{
     .item-inner{
       border-bottom: none;
     }
@@ -131,7 +131,9 @@ ion-note{
     border-bottom: 1px solid #fff!important;
   }
 }
-
+.datetime{
+  padding-bottom: 3px;
+}
 .custom-icon{
   font-size: 1.4em;
 }

@@ -51,24 +51,16 @@ export class ProfilePersonalPage {
     {
       name: "Peso",
       page: StepWeightPage
-    },
-    {
-      name: "Contato de emergência",
-    },
-    {
-      name: "Localização",
-    },
+    }
   ];
 
   constructor(public modalCtrl: ModalController, public navCtrl: NavController, public navParams: NavParams) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad ProfilePersonalPage');
-  }
-
   goToPage(page) {
-    let modal = this.modalCtrl.create(page);
+    let modal = this.modalCtrl.create(page, {
+      fillSingle: true
+    });
     modal.present();
   }
 }

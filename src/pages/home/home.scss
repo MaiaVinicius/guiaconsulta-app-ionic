@@ -7,14 +7,26 @@ page-home {
     margin-top: 35px;
   }
 
-
+  .toolbar-background {
+    background-color: transparent;
+  }
 
   .pt150 {
     margin-top: 150px;
   }
+
+  .toolbar-background {
+    border-style: none!important;
+  }
+
+  background-color: #246994;
+  border-bottom: #246994 1px solid;
 }
 
 .platform-android {
+  .header-md::after, .tabs-md[tabsPlacement="top"] > .tabbar::after, .footer-md::before, .tabs-md[tabsPlacement="bottom"] > .tabbar::before{
+    background-image: none;
+  }
   .search-background {
     margin-top: 55px !important;
   }

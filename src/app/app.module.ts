@@ -1,6 +1,6 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {ErrorHandler, NgModule} from '@angular/core';
-import {IonicApp, IonicErrorHandler, IonicModule} from 'ionic-angular';
+import {IonicApp, IonicErrorHandler, IonicModule, Platform} from 'ionic-angular';
 
 import {MyApp} from './app.component';
 import {HomePage} from '../pages/home/home';
@@ -57,6 +57,9 @@ import {SuperTabsController, SuperTabsModule} from 'ionic2-super-tabs';
 import {ProfileLifestylePage} from "../pages/profile/full-profile/profile-lifestyle/profile-lifestyle";
 import {ProfileMedicalRecordPage} from "../pages/profile/full-profile/profile-medical-record/profile-medical-record";
 import {ProfilePersonalPage} from "../pages/profile/full-profile/profile-personal/profile-personal";
+import {Geolocation} from "@ionic-native/geolocation";
+import {Http, HttpModule} from '@angular/http';
+import { LocationProvider } from '../providers/location/location';
 
 @NgModule({
   declarations: [
@@ -111,7 +114,8 @@ import {ProfilePersonalPage} from "../pages/profile/full-profile/profile-persona
     }),
     Ionic2RatingModule,
     MultiPickerModule,
-    SuperTabsModule
+    SuperTabsModule,
+    HttpModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -167,7 +171,9 @@ import {ProfilePersonalPage} from "../pages/profile/full-profile/profile-persona
     Transfer,
     Camera,
     FilePath,
-    SuperTabsController
+    SuperTabsController,
+    Geolocation,
+    LocationProvider
   ]
 })
 

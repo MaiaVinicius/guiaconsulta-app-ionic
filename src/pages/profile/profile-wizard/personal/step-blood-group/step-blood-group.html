@@ -13,7 +13,7 @@
       </button>
     </ion-buttons>
     <ion-buttons right start>
-      <button (click)="backStep()" ion-button>
+      <button *ngIf="!fillSingle" (click)="backStep()" ion-button>
         Voltar
       </button>
       <button (click)="nextStep()" ion-button>

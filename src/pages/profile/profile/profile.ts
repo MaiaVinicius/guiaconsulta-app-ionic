@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {NavController, NavParams} from 'ionic-angular';
+import {ModalController, NavController, NavParams} from 'ionic-angular';
 import {StepEmailPage} from "../profile-wizard/personal/step-email/step-email";
 import {FavoriteDoctorsPage} from "../favorite-doctors/favorite-doctors";
 import {MedicalRecordPage} from "../medical-record/medical-record/medical-record";
@@ -22,19 +22,21 @@ import {FullProfilePage} from "../full-profile/full-profile/full-profile";
 })
 export class ProfilePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public modalCtrl: ModalController, public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ProfilePage');
   }
 
+
   goToFullProfile() {
     this.navCtrl.push(FullProfilePage);
   }
 
   goToWizardProfile() {
-    this.navCtrl.push(StepEmailPage);
+    let modal = this.modalCtrl.create(StepEmailPage);
+    modal.present();
   }
 
   goToFavoriteDoctors() {

@@ -1,18 +1,39 @@
 <!--
-  Generated template for the StepLocationPage page.
+  Generated template for the StepEmailPage page.
 
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>step-location</ion-title>
+  <ion-navbar hideBackButton="true">
+    <ion-buttons left>
+      <button (click)="close()" ion-button icon-only>
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-buttons start right>
+      <button *ngIf="!fillSingle" (click)="backStep()" ion-button>
+        Voltar
+      </button>
+      <button (click)="nextStep()" ion-button>
+        Salvar
+      </button>
+    </ion-buttons>
+    <ion-title>Pessoal</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
+<ion-content padding class="profile-wizard">
+  <h1 class="profile-wizard-title">
+    Qual a sua localização?
+  </h1>
 
+  <div class="profile-wizard-response">
+    <ion-item>
+      <ion-input type="text" placeholder="Digite"></ion-input>
+    </ion-item>
+  </div>
 </ion-content>

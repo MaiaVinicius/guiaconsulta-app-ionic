@@ -1,7 +1,8 @@
 import {Component} from '@angular/core';
-import {NavController, NavParams} from 'ionic-angular';
+import {NavController, NavParams, ViewController} from 'ionic-angular';
 import {StepGenderPage} from "../step-gender/step-gender";
 import {ProfilePage} from "../../../profile/profile";
+import {HomePage} from "../../../../home/home";
 
 /**
  * Generated class for the StepEmailPage page.
@@ -15,20 +16,26 @@ import {ProfilePage} from "../../../profile/profile";
   templateUrl: 'step-email.html',
 })
 export class StepEmailPage {
+  public fillSingle;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad StepEmailPage');
+  constructor(public viewCtrl: ViewController, public navCtrl: NavController, public navParams: NavParams) {
+    this.fillSingle = navParams.get("fillSingle");
   }
 
   nextStep() {
-    this.navCtrl.push(StepGenderPage, {},
-      {animate: true, animation: 'transition', duration: 500, direction: 'forward'});
+    if (this.fillSingle) {
+      this.viewCtrl.dismiss();
+    } else {
+      this.navCtrl.push(StepGenderPage, {},
+        {animate: true, animation: 'transition', duration: 500, direction: 'forward'});
+    }
   }
 
   close() {
-    this.navCtrl.setRoot(ProfilePage, {}, {animate: true, animation: 'transition', duration: 500, direction: 'back'});
+    if (this.fillSingle) {
+      this.viewCtrl.dismiss();
+    } else {
+      this.navCtrl.setRoot(HomePage, {}, {animate: true, animation: 'transition', duration: 500, direction: 'back'});
+    }
   }
 }

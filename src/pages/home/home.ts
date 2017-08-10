@@ -5,6 +5,8 @@ import {SearchLocationPage} from "../search-location/search-location";
 import {PaymentMethodPage} from "../payment-method/payment-method";
 import {LoadingController} from 'ionic-angular';
 import {ResultPage} from "../result/result";
+import {SearchProvider} from "../../providers/search/search";
+import {LocationProvider} from "../../providers/location/location";
 
 @Component({
   selector: 'page-home',
@@ -13,8 +15,11 @@ import {ResultPage} from "../result/result";
 
 export class HomePage {
 
-  constructor(public navCtrl: NavController, public loadingCtrl: LoadingController) {
+  constructor(public locationProvider: LocationProvider, public navCtrl: NavController, public loadingCtrl: LoadingController) {
+  }
 
+  ngOnInit() {
+    this.locationProvider.getCurrentLocation();
   }
 
   navToSearchSpecialty() {

@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import {Component} from '@angular/core';
+import {NavController, NavParams, ViewController} from 'ionic-angular';
 import {ProfilePage} from "../../../profile/profile";
+import {StepMedicalSectionPage} from "../../medical/step-medical-section/step-medical-section";
 
 /**
  * Generated class for the StepWeightPage page.
@@ -14,16 +15,26 @@ import {ProfilePage} from "../../../profile/profile";
   templateUrl: 'step-weight.html',
 })
 export class StepWeightPage {
+  public fillSingle;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public viewCtrl: ViewController, public navCtrl: NavController, public navParams: NavParams) {
+    this.fillSingle = navParams.get("fillSingle");
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad StepWeightPage');
+  nextStep() {
+    if (this.fillSingle) {
+      this.viewCtrl.dismiss();
+    } else {
+      this.navCtrl.push(StepMedicalSectionPage, {},
+        {animate: true, animation: 'transition', duration: 500, direction: 'forward'});
+    }
   }
-
 
   close() {
-    this.navCtrl.setRoot(ProfilePage, {}, {animate: true, animation: 'transition', duration: 500, direction: 'back'});
+    if (this.fillSingle) {
+      this.viewCtrl.dismiss();
+    } else {
+      this.navCtrl.setRoot(ProfilePage, {}, {animate: true, animation: 'transition', duration: 500, direction: 'back'});
+    }
   }
 }

@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {NavController, NavParams} from 'ionic-angular';
+import {NavController, NavParams, ViewController} from 'ionic-angular';
 import {StepBloodGroupPage} from "../step-blood-group/step-blood-group";
 import {ProfilePage} from "../../../profile/profile";
 
@@ -49,23 +49,30 @@ export class StepBirthPage {
       ]
     }
   ];
+  public fillSingle;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad StepBirthPage');
+  constructor(public viewCtrl: ViewController, public navCtrl: NavController, public navParams: NavParams) {
+    this.fillSingle = navParams.get("fillSingle");
   }
 
   nextStep() {
-    this.navCtrl.push(StepBloodGroupPage, {},
-      {animate: true, animation: 'transition', duration: 500, direction: 'forward'});
-  }
-  backStep(){
-    this.navCtrl.pop({animate: true, animation: 'transition', duration: 500, direction: 'back'});
+    if (this.fillSingle) {
+      this.viewCtrl.dismiss();
+    } else {
+      this.navCtrl.push(StepBloodGroupPage, {},
+        {animate: true, animation: 'transition', duration: 500, direction: 'forward'});
+    }
   }
 
   close() {
-    this.navCtrl.setRoot(ProfilePage, {}, {animate: true, animation: 'transition', duration: 500, direction: 'back'});
+    if (this.fillSingle) {
+      this.viewCtrl.dismiss();
+    } else {
+      this.navCtrl.setRoot(ProfilePage, {}, {animate: true, animation: 'transition', duration: 500, direction: 'back'});
+    }
+  }
+
+  backStep() {
+    this.navCtrl.pop({animate: true, animation: 'transition', duration: 500, direction: 'back'});
   }
 }

@@ -1,5 +1,5 @@
 import {Component, ViewChild} from '@angular/core';
-import {NavController, NavParams} from 'ionic-angular';
+import {NavController, NavParams, ViewController} from 'ionic-angular';
 import {SuperTabs} from "ionic2-super-tabs";
 import {ProfileLifestylePage} from "../profile-lifestyle/profile-lifestyle";
 import {ProfileMedicalRecordPage} from "../profile-medical-record/profile-medical-record";
@@ -22,7 +22,7 @@ export class FullProfilePage {
   medical: any = ProfileMedicalRecordPage;
   lifestyle: any = ProfileLifestylePage;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public viewCtrl: ViewController, public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
@@ -35,5 +35,9 @@ export class FullProfilePage {
 
   hideToolbar() {
     this.superTabs.showToolbar(false);
+  }
+
+  dismiss() {
+    this.viewCtrl.dismiss();
   }
 }
