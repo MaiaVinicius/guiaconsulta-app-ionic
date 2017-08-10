@@ -15,7 +15,7 @@
 
   <button (click)="navToSearchLocation()" class="button-home" ion-button block icon-start color="light">
     <ion-icon name="ios-pin-outline"></ion-icon>
-    Localização
+    <span [innerHtml]="location ? location : unfilledField('Localização')"></span>
   </button>
 
   <button (click)="navToPaymentMethod()" class="button-home" ion-button block icon-start color="light">

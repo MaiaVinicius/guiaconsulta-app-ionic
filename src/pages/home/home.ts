@@ -14,12 +14,15 @@ import {LocationProvider} from "../../providers/location/location";
 })
 
 export class HomePage {
+  public location;
 
   constructor(public locationProvider: LocationProvider, public navCtrl: NavController, public loadingCtrl: LoadingController) {
   }
 
   ngOnInit() {
-    this.locationProvider.getCurrentLocation();
+    this.locationProvider.getCurrentLocation().then(response =>
+      this.location = response
+    );
   }
 
   navToSearchSpecialty() {
@@ -46,5 +49,9 @@ export class HomePage {
       duration: 3000
     });
     loader.present();
+  }
+
+  unfilledField(label) {
+    return "<span class='field-label'>" + label + "</span>";
   }
 }

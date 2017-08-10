@@ -13,8 +13,10 @@ import {Geolocation} from '@ionic-native/geolocation';
  */
 @Injectable()
 export class LocationProvider {
-  googleMapsApiUrl = "https://maps.googleapis.com/maps/api/";
-  geocodeKey = "AIzaSyA2RpD2PmtzXTJe9gTC_KBgtHxCx53hwWU";
+  private googleMapsApiUrl = "https://maps.googleapis.com/maps/api/";
+  private geocodeKey = "AIzaSyA2RpD2PmtzXTJe9gTC_KBgtHxCx53hwWU";
+
+  public current = {latlng: {lat: 0, lng: 0}, address: false};
 
   constructor(public http: Http, private platform: Platform, private geolocation: Geolocation) {
     console.log('Hello LocationProvider Provider');
@@ -29,7 +31,7 @@ export class LocationProvider {
     })
       .toPromise()
       .then(response => {
-          return response.json().results[1].formatted_address
+          this.current.address = response.json().results[1].formatted_address;
         }
       )
       .catch((err) => {
@@ -38,14 +40,17 @@ export class LocationProvider {
   }
 
 
-  getCurrentLocation() {
-    this.platform.ready().then(() => {
+  getCurrentLocation(): Promise<any> {
+    return this.platform.ready().then(() => {
 
       // get current position
-      this.geolocation.getCurrentPosition().then(pos => {
-        console.log('lat: ' + pos.coords.latitude + ', lon: ' + pos.coords.longitude);
+      return this.geolocation.getCurrentPosition().then(pos => {
+        this.current.latlng.lat = pos.coords.latitude;
+        this.current.latlng.lng = pos.coords.longitude;
 
-        this.coordsToAddress(pos.coords.latitude, pos.coords.longitude).then(result => console.log(result));
+        return this.coordsToAddress(pos.coords.latitude, pos.coords.longitude).then(() => {
+          return this.current.address;
+        });
       });
     });
 
