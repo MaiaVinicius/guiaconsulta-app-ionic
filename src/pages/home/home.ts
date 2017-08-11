@@ -15,13 +15,25 @@ import {LocationProvider} from "../../providers/location/location";
 
 export class HomePage {
   public location;
+  public payment;
 
-  constructor(public locationProvider: LocationProvider, public navCtrl: NavController, public loadingCtrl: LoadingController) {
+  constructor(public locationProvider: LocationProvider, public searchProvider: SearchProvider, public navCtrl: NavController, public loadingCtrl: LoadingController) {
+  }
+
+  ionViewDidLoad() {
+    this.location = this.searchProvider.getLocation();
+    this.payment = this.searchProvider.getPayment();
   }
 
   ngOnInit() {
-    this.locationProvider.getCurrentLocation().then(response =>
-      this.location = response
+    this.getLocation();
+  }
+
+  getLocation() {
+    this.locationProvider.getCurrentLocation().then(response => {
+        this.searchProvider.setLocation(response);
+        this.location = response;
+      }
     );
   }
 

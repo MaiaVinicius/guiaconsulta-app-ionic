@@ -1,5 +1,7 @@
 import {Component, NgZone, ViewChild} from '@angular/core';
 import {Searchbar, ViewController} from 'ionic-angular';
+import {SearchProvider} from "../../providers/search/search";
+import {LocationProvider} from "../../providers/location/location";
 
 /**
  * Generated class for the SearchLocationPage page.
@@ -14,17 +16,27 @@ declare var google: any;
   templateUrl: 'search-location.html',
 })
 export class SearchLocationPage {
+  public savedLocations;
+
   autocompleteItems;
   autocomplete;
   service = new google.maps.places.AutocompleteService();
   @ViewChild('searchBarLocation') searchBar: Searchbar;
 
-  constructor(public viewCtrl: ViewController, private zone: NgZone) {
+  constructor(private locationProvider: LocationProvider, private searchProvider: SearchProvider, public viewCtrl: ViewController, private zone: NgZone) {
 
     this.autocompleteItems = [];
     this.autocomplete = {
       query: ''
     };
+  }
+
+  ionViewDidLoad() {
+    this.updateSavedLocations();
+  }
+
+  private updateSavedLocations() {
+    this.savedLocations = this.searchProvider.updateSavedLocations();
   }
 
   ngOnInit() {
@@ -39,7 +51,18 @@ export class SearchLocationPage {
   }
 
   chooseItem(item: any) {
-    this.viewCtrl.dismiss(item);
+    this.searchProvider.setLocation(item);
+    this.dismiss();
+  }
+
+  chooseCurrentLocation() {
+    if (!this.locationProvider.current) {
+      this.locationProvider.getCurrentLocation().then(response => {
+          this.searchProvider.setLocation(response);
+        }
+      );
+    }
+    this.dismiss();
   }
 
   updateSearch() {
@@ -54,9 +77,11 @@ export class SearchLocationPage {
     }, function (predictions, status) {
       me.autocompleteItems = [];
       me.zone.run(function () {
-        predictions.forEach(function (prediction) {
-          me.autocompleteItems.push(prediction.description);
-        });
+        if (predictions) {
+          predictions.forEach(function (prediction) {
+            me.autocompleteItems.push(prediction.description);
+          });
+        }
       });
     });
   }

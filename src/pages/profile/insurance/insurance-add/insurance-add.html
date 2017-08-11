@@ -27,23 +27,24 @@
 
   <ion-item>
     <ion-label stacked>Nome do plano</ion-label>
-    <ion-input autocapitalize="characters" type="text"></ion-input>
+    <ion-input autocapitalize="characters" type="text" [(ngModel)]="insurance.plan"></ion-input>
   </ion-item>
 
   <ion-item>
     <ion-label stacked>Número de matricula</ion-label>
-    <ion-input type="number"></ion-input>
+    <ion-input type="number" [(ngModel)]="insurance.registration"></ion-input>
   </ion-item>
 
   <ion-item>
     <ion-label stacked>Proprietário</ion-label>
-    <ion-select [(ngModel)]="proper" cancelText="Cancelar" okText="Definir">
+    <ion-select [(ngModel)]="insurance.owner" cancelText="Cancelar" okText="Definir">
       <ion-option value="0" selected="true">Vinicius</ion-option>
       <ion-option value="1">Jonas Cardoso</ion-option>
-    </ion-select>  </ion-item>
+    </ion-select>
+  </ion-item>
 </ion-content>
 <ion-footer no-shadow padding>
-  <button (click)="dismiss()" ion-button block icon-start>
+  <button (click)="addInsurance()" ion-button block icon-start>
     Adicionar convênio
   </button>
 </ion-footer>

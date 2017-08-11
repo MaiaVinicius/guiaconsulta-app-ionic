@@ -10,9 +10,38 @@ import 'rxjs/add/operator/map';
  */
 @Injectable()
 export class SearchProvider {
+  public location;
+  public payment;
 
   constructor(public http: Http) {
     console.log('Hello SearchProvider Provider');
   }
 
+  public getLocation() {
+    return this.location;
+  }
+
+  public setLocation(location) {
+    this.location = location;
+  }
+
+  public getPayment() {
+    return this.payment;
+  }
+
+  public setPayment(payment) {
+    this.payment = payment;
+  }
+
+  public updateSavedLocations() {
+    return [{
+      label: "Trabalho",
+      icon: "briefcase",
+      address: "Endereco 1"
+    }, {
+      label: "Casa",
+      icon: "home",
+      address: "Endereco 2"
+    }];
+  }
 }

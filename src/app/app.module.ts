@@ -60,6 +60,8 @@ import {ProfilePersonalPage} from "../pages/profile/full-profile/profile-persona
 import {Geolocation} from "@ionic-native/geolocation";
 import {Http, HttpModule} from '@angular/http';
 import { LocationProvider } from '../providers/location/location';
+import { DependentProvider } from '../providers/dependent/dependent';
+import { InsuranceProvider } from '../providers/insurance/insurance';
 
 @NgModule({
   declarations: [
@@ -173,7 +175,9 @@ import { LocationProvider } from '../providers/location/location';
     FilePath,
     SuperTabsController,
     Geolocation,
-    LocationProvider
+    LocationProvider,
+    DependentProvider,
+    InsuranceProvider
   ]
 })
 

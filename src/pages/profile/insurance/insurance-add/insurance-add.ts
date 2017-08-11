@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {NavController, NavParams, ViewController} from 'ionic-angular';
 import {InsuranceSearchPage} from "../insurance-search/insurance-search";
+import {InsuranceProvider} from "../../../../providers/insurance/insurance";
 
 /**
  * Generated class for the InsuranceAddPage page.
@@ -14,12 +15,14 @@ import {InsuranceSearchPage} from "../insurance-search/insurance-search";
   templateUrl: 'insurance-add.html',
 })
 export class InsuranceAddPage {
+  public insurance = {plan:0};
 
-  constructor(public viewCtrl: ViewController, public navCtrl: NavController, public navParams: NavParams) {
+  constructor(private insuranceProvider: InsuranceProvider, public viewCtrl: ViewController, public navCtrl: NavController, public navParams: NavParams) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad InsuranceAddPage');
+  addInsurance() {
+    this.insuranceProvider.addInsurance(this.insurance);
+    // this.insurance = {};
   }
 
   searchInsurance() {

@@ -49,7 +49,7 @@ export class LocationProvider {
         this.current.latlng.lng = pos.coords.longitude;
 
         return this.coordsToAddress(pos.coords.latitude, pos.coords.longitude).then(() => {
-          return this.current.address;
+          return this.current;
         });
       });
     });

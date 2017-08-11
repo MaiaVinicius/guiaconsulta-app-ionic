@@ -1,5 +1,6 @@
 import {Component, ViewChild} from '@angular/core';
 import {NavController, NavParams, Searchbar, ViewController} from 'ionic-angular';
+import {SearchProvider} from "../../providers/search/search";
 
 /**
  * Generated class for the PaymentMethodPage page.
@@ -14,20 +15,25 @@ import {NavController, NavParams, Searchbar, ViewController} from 'ionic-angular
 })
 export class PaymentMethodPage {
   searchingInsurance = false;
+  privatePayments = [{
+    id: 1,
+    label: "Consulta popular (até R$ 150,00)"
+  },{
+    id: 2,
+    label: "Consulta particular"
+  }];
+
   @ViewChild('searchBarInsurance') searchBar: Searchbar;
 
-  constructor(public viewCtrl: ViewController,public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public searchProvider: SearchProvider, public viewCtrl: ViewController, public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad PaymentMethodPage');
   }
 
-  searchInsurance() {
-    this.searchingInsurance = true;
-    setTimeout(() => {
-      this.searchBar.setFocus();
-    }, 200);
+  chooseItem(item) {
+    this.searchProvider.setPayment(item);
   }
 
   dismiss() {

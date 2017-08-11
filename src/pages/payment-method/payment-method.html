@@ -14,8 +14,7 @@
 
 <ion-content>
   <ion-list>
-    <button ion-item>Consulta popular (até R$ 150,00)</button>
-    <button ion-item >Consulta particular</button>
+    <button *ngFor="let privatePayment of privatePayments" ion-item>{{privatePayment.label}}</button>
     <ion-item-divider color="light">
       Todos os convenios
     </ion-item-divider>
