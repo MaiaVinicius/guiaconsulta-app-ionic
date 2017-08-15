@@ -30,33 +30,32 @@
     border-bottom: 1px solid #D7D7D7;
   }
 
-  .item-inner{
-    box-shadow: none!important;
+  .item-inner {
+    box-shadow: none !important;
   }
 
-  .item-input-has-focus .item-inner{
+  .item-input-has-focus .item-inner {
     border-bottom: 2px solid #2D9CD7;
   }
 
-  .list-md .item-input:last-child{
+  .list-md .item-input:last-child {
     border-bottom: none;
     box-shadow: none;
   }
 }
 
-.platform-ios{
-  .searchbar-ios-cancel{
+.platform-ios {
+  .searchbar-ios-cancel {
     color: #fff;
   }
-  .text-ios-primary{
+  .text-ios-primary {
     color: #fff;
   }
-
 
 }
 
-.item-input, .item-select, .item-range,.item-datetime{
-  padding-left: 0!important;
+.item-input, .item-select, .item-range, .item-datetime {
+  padding-left: 0 !important;
 }
 
 .button-home {
@@ -67,59 +66,68 @@
   justify-content: flex-start;
 }
 
-ion-note{
+ion-note {
   font-size: 13px;
 }
 
-.text-center{
+.text-center {
   text-align: center;
 }
 
-.menu-item-icon{
-  padding-top:5px;
+.menu-item-icon {
+  padding-top: 5px;
   padding-left: 16px;
 }
 
-.menu-item{
-  padding-left:0;
+.menu-item {
+  padding-left: 0;
 }
 
-.bt0{
-  border-top: none!important;
+.bt0 {
+  border-top: none !important;
 }
 
-.mt5{
+.mt5 {
   margin-top: 5px;
 }
 
-.profile-wizard{
-  background-color: #5ab0e2;
-  color: #fff!important;
+.profile-wizard {
+  .button-outline-ios-light {
+    color: #fff;
+  }
 
-  .profile-wizard-title{
+  .button-outline-ios-light.activated {
+    color: #5ab0e2;
+  }
+
+
+  background-color: #5ab0e2;
+  color: #fff !important;
+
+  .profile-wizard-title {
     padding-top: 175px;
   }
 
-  .profile-wizard-response{
+  .profile-wizard-response {
     padding-top: 40px;
   }
 
-  ::selection{
+  ::selection {
     color: #fff;
     background-color: #007aff;
   }
 
-  .item-input, .item-multi-picker, .item-datetime{
-    .item-inner{
+  .item-input, .item-multi-picker, .item-datetime {
+    .item-inner {
       border-bottom: none;
     }
 
-    border-top: none!important;
+    border-top: none !important;
 
     background-color: transparent;
     color: #fff;
 
-    .multi-picker-placeholder{
+    .multi-picker-placeholder {
       color: #fff;
     }
 
@@ -128,12 +136,14 @@ ion-note{
       font-size: 22px;
     }
     font-size: 22px;
-    border-bottom: 1px solid #fff!important;
+    border-bottom: 1px solid #fff !important;
   }
 }
-.datetime{
-  padding-bottom: 3px;
+
+.datetime {
+  padding-bottom: 4px;
 }
-.custom-icon{
+
+.custom-icon {
   font-size: 1.4em;
 }

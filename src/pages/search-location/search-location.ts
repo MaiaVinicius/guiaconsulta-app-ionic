@@ -52,17 +52,20 @@ export class SearchLocationPage {
 
   chooseItem(item: any) {
     this.searchProvider.setLocation(item);
-    this.dismiss();
+    this.dismiss()
   }
 
   chooseCurrentLocation() {
     if (!this.locationProvider.current) {
       this.locationProvider.getCurrentLocation().then(response => {
           this.searchProvider.setLocation(response);
+
+          this.dismiss();
         }
       );
+    } else {
+      this.dismiss();
     }
-    this.dismiss();
   }
 
   updateSearch() {

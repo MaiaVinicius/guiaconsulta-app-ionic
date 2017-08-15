@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 import {NavController, NavParams} from 'ionic-angular';
 import {MedicationReminderAddPage} from "../medication-reminder-add/medication-reminder-add";
 import {ModalController} from 'ionic-angular';
+import {MedicationProvider} from "../../../providers/medication/medication";
 
 /**
  * Generated class for the MedicationReminderPage page.
@@ -15,16 +16,19 @@ import {ModalController} from 'ionic-angular';
   templateUrl: 'medication-reminder.html',
 })
 export class MedicationReminderPage {
+  public reminders;
 
-  constructor(public modalCtrl: ModalController, public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public medicationProvider: MedicationProvider, public modalCtrl: ModalController, public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad MedicationReminderPage');
+    this.reminders = this.medicationProvider.getReminders();
   }
 
   registerMedication() {
     let modal = this.modalCtrl.create(MedicationReminderAddPage);
     modal.present();
   }
+
+
 }

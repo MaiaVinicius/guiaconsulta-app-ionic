@@ -62,6 +62,8 @@ import {Http, HttpModule} from '@angular/http';
 import { LocationProvider } from '../providers/location/location';
 import { DependentProvider } from '../providers/dependent/dependent';
 import { InsuranceProvider } from '../providers/insurance/insurance';
+import { MedicationProvider } from '../providers/medication/medication';
+import { ProfileWizardProvider } from '../providers/profile-wizard/profile-wizard';
 
 @NgModule({
   declarations: [
@@ -177,7 +179,9 @@ import { InsuranceProvider } from '../providers/insurance/insurance';
     Geolocation,
     LocationProvider,
     DependentProvider,
-    InsuranceProvider
+    InsuranceProvider,
+    MedicationProvider,
+    ProfileWizardProvider
   ]
 })
 

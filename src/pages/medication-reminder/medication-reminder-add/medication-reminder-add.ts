@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {NavController, NavParams, ViewController, ModalController } from 'ionic-angular';
+import {NavController, NavParams, ViewController, ModalController} from 'ionic-angular';
 import {SearchMedicationPage} from "../search-medication/search-medication";
 
 /**
@@ -14,6 +14,8 @@ import {SearchMedicationPage} from "../search-medication/search-medication";
   templateUrl: 'medication-reminder-add.html',
 })
 export class MedicationReminderAddPage {
+  public medication = {};
+  public today: String = new Date().toISOString();
 
   constructor(public modalCtrl: ModalController, public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController) {
   }

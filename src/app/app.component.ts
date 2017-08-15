@@ -27,10 +27,10 @@ export class MyApp {
 
     // used for an example of ngFor and navigation
     this.pages = [
-      {title: 'Busca', icon: 'search', component: HomePage},
-      {title: 'Lembrete de medicamentos', icon: 'time', component: MedicationReminderPage},
-      {title: 'Consultas', icon: 'calendar', component: AppointmentsPage},
-      {title: 'Perfil', icon: 'person', component: ProfilePage},
+      {title: 'Busca', icon: 'search-outline', component: HomePage},
+      {title: 'Lembrete de medicamentos', icon: 'time-outline', component: MedicationReminderPage},
+      {title: 'Consultas', icon: 'calendar-outline', component: AppointmentsPage},
+      {title: 'Perfil', icon: 'person-outline', component: ProfilePage},
       {title: 'Avaliar', icon: 'start', component: EvaluationPage},
       {title: 'Index', icon: 'start', component: IndexPage},
       {title: 'Convide seu medico', icon: 'add', component: InviteDoctorPage},

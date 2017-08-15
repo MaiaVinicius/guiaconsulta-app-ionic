@@ -6,16 +6,16 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding class="search-background">
+<ion-content padding class="search-background" style="background-image: url('assets/img/fundo-busca.svg')">
 
   <button (click)="navToSearchSpecialty()" class="button-home pt150" ion-button block icon-start color="light">
     <ion-icon name="ios-medkit-outline"></ion-icon>
-    Especialidade, profissional ou procedimento
+    O que você quer agendar?
   </button>
 
   <button (click)="navToSearchLocation()" class="button-home" ion-button block icon-start color="light">
     <ion-icon name="ios-pin-outline"></ion-icon>
-    <span [innerHtml]="location ? location.address : unfilledField('Localização')"></span>
+    <span [innerHtml]="location ? location.address : unfilledField('Local')"></span>
   </button>
 
   <button (click)="navToPaymentMethod()" class="button-home" ion-button block icon-start color="light">

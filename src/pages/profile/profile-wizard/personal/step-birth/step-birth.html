@@ -16,7 +16,7 @@
       <button *ngIf="!fillSingle" (click)="backStep()" ion-button>
         Voltar
       </button>
-      <button (click)="nextStep()" ion-button>
+      <button (click)="saveStep()" ion-button>
         Salvar
       </button>
     </ion-buttons>
@@ -33,7 +33,7 @@
 
   <div class="profile-wizard-response">
     <ion-item>
-      <ion-multi-picker placeholder="Digite sua data de nascimento" item-content [multiPickerColumns]="simpleColumns"></ion-multi-picker>
+      <ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="birthdate"></ion-datetime>
     </ion-item>
   </div>
 </ion-content>

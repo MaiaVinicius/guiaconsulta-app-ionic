@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {NavController} from 'ionic-angular';
+import {NavController, NavParams} from 'ionic-angular';
 import {SearchSpecialtyPage} from "../search-specialty/search-specialty";
 import {SearchLocationPage} from "../search-location/search-location";
 import {PaymentMethodPage} from "../payment-method/payment-method";
@@ -17,7 +17,10 @@ export class HomePage {
   public location;
   public payment;
 
-  constructor(public locationProvider: LocationProvider, public searchProvider: SearchProvider, public navCtrl: NavController, public loadingCtrl: LoadingController) {
+  constructor(public navParams: NavParams, public locationProvider: LocationProvider, public searchProvider: SearchProvider, public navCtrl: NavController, public loadingCtrl: LoadingController) {
+    if (navParams.get("location")) {
+      this.location = navParams.get("location");
+    }
   }
 
   ionViewDidLoad() {

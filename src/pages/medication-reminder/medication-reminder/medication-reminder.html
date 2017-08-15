@@ -15,17 +15,17 @@
 
 </ion-header>
 <ion-content>
-  <ion-card>
+  <ion-card *ngFor="let reminder of reminders">
     <ion-card-header>
-      DORFLEX
+      {{reminder.name}}
     </ion-card-header>
     <ion-card-content>
-      1.25 Comprimido <br>
+      {{reminder.unit}} <br>
       <ion-row>
         <ion-col>
           <button ion-button icon-left clear small>
             <ion-icon name="time"></ion-icon>
-            <div>10:00 14:00 18:000</div>
+            <div>{{reminder.times}}</div>
           </button>
         </ion-col>
       </ion-row>
@@ -33,7 +33,7 @@
   </ion-card>
 </ion-content>
 <ion-footer no-shadow padding>
-    <button (click)="registerMedication()" ion-button block icon-start>
-      Adicionar lembrete
-    </button>
+  <button (click)="registerMedication()" ion-button block icon-start>
+    Adicionar lembrete
+  </button>
 </ion-footer>
