@@ -7,7 +7,8 @@
 <ion-header>
 
   <ion-toolbar>
-    <ion-searchbar showCancelButton="true" (ionCancel)="dismiss()" #searchBarInsurance placeholder="Nome do convênio"></ion-searchbar>
+    <ion-searchbar showCancelButton="true" (ionCancel)="dismiss()" #searchBarInsurance
+                   placeholder="Nome do convênio"></ion-searchbar>
   </ion-toolbar>
 </ion-header>
 
@@ -15,6 +16,15 @@
 <ion-content>
   <ion-list>
     <button *ngFor="let privatePayment of privatePayments" ion-item>{{privatePayment.label}}</button>
+    <ion-item-divider color="light">
+      Meus convenios
+    </ion-item-divider>
+    <button ion-item>
+      Bradesco
+      <ion-note item-end>
+        DELTA
+      </ion-note>
+    </button>
     <ion-item-divider color="light">
       Todos os convenios
     </ion-item-divider>

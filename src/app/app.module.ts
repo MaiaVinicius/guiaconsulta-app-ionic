@@ -64,6 +64,7 @@ import { DependentProvider } from '../providers/dependent/dependent';
 import { InsuranceProvider } from '../providers/insurance/insurance';
 import { MedicationProvider } from '../providers/medication/medication';
 import { ProfileWizardProvider } from '../providers/profile-wizard/profile-wizard';
+import {AttendanceFormPage} from "../pages/attendance-form/attendance-form";
 
 @NgModule({
   declarations: [
@@ -94,6 +95,7 @@ import { ProfileWizardProvider } from '../providers/profile-wizard/profile-wizar
     InsuranceSearchPage,
     SearchDoctorPage,
     DoctorProfilePage,
+    AttendanceFormPage,
     //Wizard Pages,
     StepEmailPage,
     StepGenderPage,
@@ -150,6 +152,7 @@ import { ProfileWizardProvider } from '../providers/profile-wizard/profile-wizar
     InsuranceSearchPage,
     SearchDoctorPage,
     DoctorProfilePage,
+    AttendanceFormPage,
     //Wizard Pages
     StepEmailPage,
     StepGenderPage,

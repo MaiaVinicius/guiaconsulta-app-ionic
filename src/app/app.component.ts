@@ -11,6 +11,7 @@ import {IndexPage} from "../pages/index/index";
 import {ProfilePage} from "../pages/profile/profile/profile";
 import {InviteDoctorPage} from "../pages/invite-doctor/invite-doctor";
 import {LoginPage} from "../pages/login/login";
+import {AttendanceFormPage} from "../pages/attendance-form/attendance-form";
 
 @Component({
   templateUrl: 'app.html'
@@ -35,6 +36,7 @@ export class MyApp {
       {title: 'Index', icon: 'start', component: IndexPage},
       {title: 'Convide seu medico', icon: 'add', component: InviteDoctorPage},
       {title: 'Login', icon: 'add', component: LoginPage},
+      {title: 'Form', icon: 'add', component: AttendanceFormPage},
       // {title: 'Configurações', icon: 'settings', component: },
     ];
 
