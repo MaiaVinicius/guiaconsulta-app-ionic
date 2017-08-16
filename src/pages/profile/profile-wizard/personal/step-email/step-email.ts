@@ -2,7 +2,7 @@ import {Component} from '@angular/core';
 import {NavController, NavParams, ViewController} from 'ionic-angular';
 import {StepGenderPage} from "../step-gender/step-gender";
 import {ProfilePage} from "../../../profile/profile";
-import {HomePage} from "../../../../home/home";
+// import {HomePage} from "../../../../home/home";
 
 /**
  * Generated class for the StepEmailPage page.
@@ -35,7 +35,7 @@ export class StepEmailPage {
     if (this.fillSingle) {
       this.viewCtrl.dismiss();
     } else {
-      this.navCtrl.setRoot(HomePage, {}, {animate: true, animation: 'transition', duration: 500, direction: 'back'});
+      this.navCtrl.setRoot(ProfilePage, {}, {animate: true, animation: 'transition', duration: 500, direction: 'back'});
     }
   }
 }

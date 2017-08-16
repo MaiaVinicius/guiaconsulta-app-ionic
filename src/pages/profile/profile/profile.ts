@@ -35,8 +35,7 @@ export class ProfilePage {
   }
 
   goToWizardProfile() {
-    let modal = this.modalCtrl.create(StepEmailPage);
-    modal.present();
+    this.navCtrl.push(StepEmailPage);
   }
 
   goToFavoriteDoctors() {
