@@ -12,23 +12,26 @@ import {MedicationProvider} from "../../../providers/medication/medication";
  */
 
 @Component({
-  selector: 'page-medication-reminder',
-  templateUrl: 'medication-reminder.html',
+    selector: 'page-medication-reminder',
+    templateUrl: 'medication-reminder.html',
 })
 export class MedicationReminderPage {
-  public reminders;
+    public reminders;
 
-  constructor(public medicationProvider: MedicationProvider, public modalCtrl: ModalController, public navCtrl: NavController, public navParams: NavParams) {
-  }
+    constructor(public medicationProvider: MedicationProvider, public modalCtrl: ModalController, public navCtrl: NavController, public navParams: NavParams) {
+        this.medicationProvider.invokeEventMedication.subscribe((value) => {
+            this.reminders = value;
+        });
+    }
 
-  ionViewDidLoad() {
-    this.reminders = this.medicationProvider.getReminders();
-  }
+    ngOnInit() {
+        this.reminders = this.medicationProvider.getReminders();
+    }
 
-  registerMedication() {
-    let modal = this.modalCtrl.create(MedicationReminderAddPage);
-    modal.present();
-  }
+    registerMedication() {
+        let modal = this.modalCtrl.create(MedicationReminderAddPage);
+        modal.present();
+    }
 
 
 }

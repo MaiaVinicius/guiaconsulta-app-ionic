@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {NavController, NavParams, ViewController, ModalController} from 'ionic-angular';
 import {SearchMedicationPage} from "../search-medication/search-medication";
+import {MedicationProvider} from "../../../providers/medication/medication";
 
 /**
  * Generated class for the MedicationReminderAddPage page.
@@ -10,26 +11,27 @@ import {SearchMedicationPage} from "../search-medication/search-medication";
  */
 
 @Component({
-  selector: 'page-medication-reminder-add',
-  templateUrl: 'medication-reminder-add.html',
+    selector: 'page-medication-reminder-add',
+    templateUrl: 'medication-reminder-add.html',
 })
 export class MedicationReminderAddPage {
-  public medication = {};
-  public today: String = new Date().toISOString();
+    public medication = {};
+    public today: String = new Date().toISOString();
 
-  constructor(public modalCtrl: ModalController, public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController) {
-  }
+    constructor(private medicationProvider: MedicationProvider, public modalCtrl: ModalController, public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController) {
+    }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad MedicationReminderAddPage');
-  }
+    addMedication() {
+        this.medicationProvider.addMedication(this.medication);
+        this.dismiss();
+    }
 
-  dismiss() {
-    this.viewCtrl.dismiss();
-  }
+    dismiss() {
+        this.viewCtrl.dismiss();
+    }
 
-  searchMedication() {
-    let modal = this.modalCtrl.create(SearchMedicationPage);
-    modal.present();
-  }
+    searchMedication() {
+        let modal = this.modalCtrl.create(SearchMedicationPage);
+        modal.present();
+    }
 }
