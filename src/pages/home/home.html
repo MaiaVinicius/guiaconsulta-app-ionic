@@ -8,22 +8,22 @@
 
 <ion-content padding class="search-background" style="background-image: url('assets/img/fundo-busca.svg')">
 
-  <button (click)="navToSearchSpecialty()" class="button-home pt150" ion-button block icon-start color="light">
+  <button (click)="onSpecialtyClick()" class="button-home pt150" ion-button block icon-start color="light">
     <ion-icon name="ios-medkit-outline"></ion-icon>
     O que você quer agendar?
   </button>
 
-  <button (click)="navToSearchLocation()" class="button-home" ion-button block icon-start color="light">
+  <button (click)="onLocationClick()" class="button-home" ion-button block icon-start color="light">
     <ion-icon name="ios-pin-outline"></ion-icon>
     <span [innerHtml]="location ? location.address : unfilledField('Local')"></span>
   </button>
 
-  <button (click)="navToPaymentMethod()" class="button-home" ion-button block icon-start color="light">
+  <button (click)="onPaymentMethodClick()" class="button-home" ion-button block icon-start color="light">
     <ion-icon name="ios-cash-outline"></ion-icon>
     Forma de pagamento
   </button>
 
-  <button (click)="doSearch()" color="secondary" margin-top ion-button block icon-left>
+  <button (click)="onSearch()" color="secondary" margin-top ion-button block icon-left>
     <ion-icon name="search"></ion-icon>
     Buscar
   </button>

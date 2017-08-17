@@ -18,9 +18,7 @@ export class HomePage {
   public payment;
 
   constructor(public navParams: NavParams, public locationProvider: LocationProvider, public searchProvider: SearchProvider, public navCtrl: NavController, public loadingCtrl: LoadingController) {
-    if (navParams.get("location")) {
-      this.location = navParams.get("location");
-    }
+
   }
 
   ionViewDidLoad() {
@@ -40,19 +38,19 @@ export class HomePage {
     );
   }
 
-  navToSearchSpecialty() {
+  onSpecialtyClick() {
     this.navCtrl.push(SearchSpecialtyPage);
   }
 
-  navToPaymentMethod() {
+  onPaymentMethodClick() {
     this.navCtrl.push(PaymentMethodPage);
   }
 
-  navToSearchLocation() {
+  onLocationClick() {
     this.navCtrl.push(SearchLocationPage);
   }
 
-  doSearch() {
+  onSearch() {
     this.navCtrl.push(ResultPage, {},
       {animate: true, animation: 'transition', duration: 500, direction: 'forward'});
     // this.presentLoading();

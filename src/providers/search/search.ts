@@ -1,4 +1,4 @@
-import {Injectable} from '@angular/core';
+import {EventEmitter, Injectable, Output} from '@angular/core';
 import {Http} from '@angular/http';
 import 'rxjs/add/operator/map';
 
@@ -12,6 +12,7 @@ import 'rxjs/add/operator/map';
 export class SearchProvider {
   public location;
   public payment;
+  @Output() open: EventEmitter<any> = new EventEmitter();
 
   constructor(public http: Http) {
     console.log('Hello SearchProvider Provider');
