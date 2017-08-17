@@ -29,6 +29,10 @@ export class HomePage {
             console.log(value);
             this.searchTerm = value;
         });
+        this.searchProvider.invokeEventPayment.subscribe((value) => {
+            console.log(value);
+            this.payment = value;
+        });
     }
 
     onSpecialtyClick() {

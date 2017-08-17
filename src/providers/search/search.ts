@@ -13,32 +13,46 @@ import {Subject} from "rxjs/Subject";
 @Injectable()
 export class SearchProvider {
     public searchTerm;
-    public location;
-    public payment;
-    public invokeEventLocation: Subject<any> = new Subject();
     public invokeEventSearchTerm: Subject<any> = new Subject();
+    public payment;
+    public invokeEventPayment: Subject<any> = new Subject();
+    public location;
+    public invokeEventLocation: Subject<any> = new Subject();
+
     public recentSearches = [
         {
             term: "Cardiologista",
             type: 1,
             typeStr: "Especialidade"
-        },{
+        }, {
             term: "Clinico geral",
             type: 1,
             typeStr: "Especialidade"
-        },{
+        }, {
             term: "Mamografia",
             type: 3,
             typeStr: "Exame"
-        },{
+        }, {
             term: "Botox",
             type: 4,
             typeStr: "Procedimento"
-        },{
+        }, {
             term: "Hepatite A",
             type: 5,
             typeStr: "Vacina"
         },
+    ];
+
+    public savedLocations = [
+        {
+            label: "Trabalho",
+            icon: "briefcase",
+            address: "Endereco 1"
+        }, {
+            label: "Casa",
+            icon: "home",
+            address: "Endereco 2"
+        }
     ];
 
     constructor(public http: Http, public locationProvider: LocationProvider) {
@@ -73,17 +87,5 @@ export class SearchProvider {
 
     public setPayment(payment) {
         this.payment = payment;
-    }
-
-    public updateSavedLocations() {
-        return [{
-            label: "Trabalho",
-            icon: "briefcase",
-            address: "Endereco 1"
-        }, {
-            label: "Casa",
-            icon: "home",
-            address: "Endereco 2"
-        }];
     }
 }

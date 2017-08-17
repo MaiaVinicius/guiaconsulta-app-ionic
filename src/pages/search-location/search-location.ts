@@ -36,7 +36,7 @@ export class SearchLocationPage {
     }
 
     private updateSavedLocations() {
-        this.savedLocations = this.searchProvider.updateSavedLocations();
+        this.savedLocations = this.searchProvider.savedLocations;
     }
 
     ngOnInit() {
