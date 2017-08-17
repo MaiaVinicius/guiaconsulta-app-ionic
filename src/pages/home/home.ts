@@ -17,10 +17,6 @@ export class HomePage {
     public payment;
 
     constructor(public navParams: NavParams, public searchProvider: SearchProvider, public navCtrl: NavController) {
-
-    }
-
-    ngOnInit() {
         this.searchProvider.invokeEventLocation.subscribe((value) => {
             console.log(value);
             this.location = value;
