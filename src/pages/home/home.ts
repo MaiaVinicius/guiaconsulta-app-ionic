@@ -56,14 +56,6 @@ export class HomePage {
     // this.presentLoading();
   }
 
-  presentLoading() {
-    let loader = this.loadingCtrl.create({
-      content: "Please wait...",
-      duration: 3000
-    });
-    loader.present();
-  }
-
   unfilledField(label) {
     return "<span class='field-label'>" + label + "</span>";
   }
