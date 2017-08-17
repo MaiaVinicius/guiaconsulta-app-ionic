@@ -20,7 +20,7 @@
 
     <button (click)="onPaymentMethodClick()" class="button-home" ion-button block icon-start color="light">
         <ion-icon name="ios-cash-outline"></ion-icon>
-        Forma de pagamento
+        <span [innerHtml]="payment ? payment.name : unfilledField('Forma de pagamento')"></span>
     </button>
 
     <button (click)="onSearch()" color="secondary" margin-top ion-button block icon-left>

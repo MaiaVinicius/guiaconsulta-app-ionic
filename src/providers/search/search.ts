@@ -55,6 +55,25 @@ export class SearchProvider {
         }
     ];
 
+    public insurances = [
+        {
+            name: "Bradesco"
+        },
+        {
+            name: "Unimed"
+        },
+        {
+            name: "Sulamerica"
+        }
+    ];
+
+    public myInsurances = [
+        {
+            name: "Bradesco",
+            plan: "DELTA"
+        }
+    ];
+
     constructor(public http: Http, public locationProvider: LocationProvider) {
 
         this.getCurrentLocation();
@@ -86,6 +105,7 @@ export class SearchProvider {
     }
 
     public setPayment(payment) {
+        this.invokeEventPayment.next(payment);
         this.payment = payment;
     }
 }

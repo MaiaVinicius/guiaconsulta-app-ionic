@@ -6,30 +6,32 @@
 -->
 <ion-header>
 
-  <ion-toolbar>
-    <ion-searchbar showCancelButton="true" (ionCancel)="dismiss()" #searchBarInsurance
-                   placeholder="Nome do convênio"></ion-searchbar>
-  </ion-toolbar>
+    <ion-toolbar>
+        <ion-searchbar showCancelButton="true" (ionCancel)="dismiss()" #searchBarInsurance
+                       placeholder="Nome do convênio"></ion-searchbar>
+    </ion-toolbar>
 </ion-header>
 
 
 <ion-content>
-  <ion-list>
-    <button *ngFor="let privatePayment of privatePayments" ion-item>{{privatePayment.label}}</button>
-    <ion-item-divider color="light">
-      Meus convenios
-    </ion-item-divider>
-    <button ion-item>
-      Bradesco
-      <ion-note item-end>
-        DELTA
-      </ion-note>
-    </button>
-    <ion-item-divider color="light">
-      Todos os convenios
-    </ion-item-divider>
-    <button ion-item>Bradesco</button>
-    <button ion-item>Sul América</button>
-    <button ion-item>Unimed</button>
-  </ion-list>
+    <ion-list>
+        <button *ngFor="let privatePayment of privatePayments" ion-item (click)="chooseItem(privatePayment)">
+            {{privatePayment.name}}
+        </button>
+        <ion-item-divider color="light">
+            Meus convenios
+        </ion-item-divider>
+        <button ion-item *ngFor="let myInsurance of myInsurances" (click)="chooseItem(myInsurance)">
+            {{myInsurance.name}}
+            <ion-note item-end>
+                {{myInsurance.plan}}
+            </ion-note>
+        </button>
+        <ion-item-divider color="light">
+            Todos os convenios
+        </ion-item-divider>
+        <button ion-item *ngFor="let insurance of insurances" (click)="chooseItem(insurance)">
+            {{insurance.name}}
+        </button>
+    </ion-list>
 </ion-content>

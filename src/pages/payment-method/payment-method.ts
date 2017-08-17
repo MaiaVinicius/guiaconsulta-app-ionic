@@ -10,34 +10,36 @@ import {SearchProvider} from "../../providers/search/search";
  */
 
 @Component({
-  selector: 'page-payment-method',
-  templateUrl: 'payment-method.html',
+    selector: 'page-payment-method',
+    templateUrl: 'payment-method.html',
 })
 export class PaymentMethodPage {
-  searchingInsurance = false;
-  privatePayments = [{
-    id: 1,
-    label: "Consulta popular (até R$ 150,00)"
-  },{
-    id: 2,
-    label: "Consulta particular"
-  }];
+    searchingInsurance = false;
+    insurances = [];
+    myInsurances = [];
 
-  @ViewChild('searchBarInsurance') searchBar: Searchbar;
+    privatePayments = [{
+        id: 1,
+        name: "Consulta popular (até R$ 150,00)"
+    }, {
+        id: 2,
+        name: "Consulta particular"
+    }];
 
-  constructor(public searchProvider: SearchProvider, public viewCtrl: ViewController, public navCtrl: NavController, public navParams: NavParams) {
-  }
+    @ViewChild('searchBarInsurance') searchBar: Searchbar;
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad PaymentMethodPage');
-  }
+    constructor(public searchProvider: SearchProvider, public viewCtrl: ViewController, public navCtrl: NavController, public navParams: NavParams) {
+        this.insurances = searchProvider.insurances;
+        this.myInsurances = searchProvider.myInsurances;
+    }
 
-  chooseItem(item) {
-    this.searchProvider.setPayment(item);
-  }
+    chooseItem(item) {
+        this.searchProvider.setPayment(item);
+        this.dismiss();
+    }
 
-  dismiss() {
-    this.viewCtrl.dismiss();
-  }
+    dismiss() {
+        this.viewCtrl.dismiss();
+    }
 
 }
