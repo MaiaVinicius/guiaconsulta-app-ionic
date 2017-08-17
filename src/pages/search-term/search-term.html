@@ -1,0 +1,30 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title></ion-title>
+        <ion-searchbar #searchTerm placeholder="Especialidade, procedimento ou sintoma"
+                       [showCancelButton]="true" (ionCancel)="dismiss()"></ion-searchbar>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+    <ion-list>
+        <ion-item-divider color="light">Buscado recentemente</ion-item-divider>
+
+        <button *ngFor="let recentSearch of recentSearches" ion-item tappable (click)="chooseTerm(recentSearch)">
+            {{recentSearch.term}}
+
+            <ion-note item-end>
+                {{recentSearch.typeStr}}
+            </ion-note>
+        </button>
+        <button ion-item (click)="goToDoctorPage()">
+            <ion-avatar item-start>
+                <img src="assets/img/icon-boy.svg">
+            </ion-avatar>
+            João da Silva
+            <p>Cardiologista</p>
+            <ion-note item-end>
+                PROFISSIONAL
+            </ion-note>
+        </button>
+    </ion-list>
+</ion-content>

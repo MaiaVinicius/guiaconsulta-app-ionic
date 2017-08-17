@@ -1,12 +1,10 @@
-import {Component, NgModule} from '@angular/core';
+import {Component} from '@angular/core';
 import {NavController, NavParams} from 'ionic-angular';
-import {SearchSpecialtyPage} from "../search-specialty/search-specialty";
+import {SearchTermPage} from "../search-term/search-term";
 import {SearchLocationPage} from "../search-location/search-location";
 import {PaymentMethodPage} from "../payment-method/payment-method";
-import {LoadingController} from 'ionic-angular';
 import {ResultPage} from "../result/result";
 import {SearchProvider} from "../../providers/search/search";
-import {LocationProvider} from "../../providers/location/location";
 
 @Component({
     selector: 'page-home',
@@ -15,9 +13,10 @@ import {LocationProvider} from "../../providers/location/location";
 
 export class HomePage {
     public location;
+    public searchTerm;
     public payment;
 
-    constructor(public navParams: NavParams, public searchProvider: SearchProvider, public navCtrl: NavController, public loadingCtrl: LoadingController) {
+    constructor(public navParams: NavParams, public searchProvider: SearchProvider, public navCtrl: NavController) {
 
     }
 
@@ -26,15 +25,14 @@ export class HomePage {
             console.log(value);
             this.location = value;
         });
-    }
-
-    ionViewDidLoad() {
-        this.location = this.searchProvider.getLocation();
-        this.payment = this.searchProvider.getPayment();
+        this.searchProvider.invokeEventSearchTerm.subscribe((value) => {
+            console.log(value);
+            this.searchTerm = value;
+        });
     }
 
     onSpecialtyClick() {
-        this.navCtrl.push(SearchSpecialtyPage);
+        this.navCtrl.push(SearchTermPage);
     }
 
     onPaymentMethodClick() {
