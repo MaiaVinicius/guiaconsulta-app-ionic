@@ -41,6 +41,7 @@ export class LocationProvider {
 
 
   getCurrentLocation(): Promise<any> {
+    console.log("Getting current location.");
     return this.platform.ready().then(() => {
 
       // get current position
@@ -49,6 +50,7 @@ export class LocationProvider {
         this.current.latlng.lng = pos.coords.longitude;
 
         return this.coordsToAddress(pos.coords.latitude, pos.coords.longitude).then(() => {
+
           return this.current;
         });
       });

@@ -1,31 +1,31 @@
 <ion-header>
-  <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-  </ion-navbar>
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+    </ion-navbar>
 </ion-header>
 
 <ion-content padding class="search-background" style="background-image: url('assets/img/fundo-busca.svg')">
 
-  <button (click)="onSpecialtyClick()" class="button-home pt150" ion-button block icon-start color="light">
-    <ion-icon name="ios-medkit-outline"></ion-icon>
-    O que você quer agendar?
-  </button>
+    <button (click)="onSpecialtyClick()" class="button-home pt150" ion-button block icon-start color="light">
+        <ion-icon name="ios-medkit-outline"></ion-icon>
+        O que você quer agendar?
+    </button>
 
-  <button (click)="onLocationClick()" class="button-home" ion-button block icon-start color="light">
-    <ion-icon name="ios-pin-outline"></ion-icon>
-    <span [innerHtml]="location ? location.address : unfilledField('Local')"></span>
-  </button>
+    <button (click)="onLocationClick()" class="button-home" ion-button block icon-start color="light">
+        <ion-icon name="ios-pin-outline"></ion-icon>
+        <span [innerHtml]="location ? location.address : unfilledField('Local')"></span>
+    </button>
 
-  <button (click)="onPaymentMethodClick()" class="button-home" ion-button block icon-start color="light">
-    <ion-icon name="ios-cash-outline"></ion-icon>
-    Forma de pagamento
-  </button>
+    <button (click)="onPaymentMethodClick()" class="button-home" ion-button block icon-start color="light">
+        <ion-icon name="ios-cash-outline"></ion-icon>
+        Forma de pagamento
+    </button>
 
-  <button (click)="onSearch()" color="secondary" margin-top ion-button block icon-left>
-    <ion-icon name="search"></ion-icon>
-    Buscar
-  </button>
+    <button (click)="onSearch()" color="secondary" margin-top ion-button block icon-left>
+        <ion-icon name="search"></ion-icon>
+        Buscar
+    </button>
 
 </ion-content>

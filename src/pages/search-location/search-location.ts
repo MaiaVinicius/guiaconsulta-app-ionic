@@ -12,80 +12,80 @@ import {LocationProvider} from "../../providers/location/location";
 declare var google: any;
 
 @Component({
-  selector: 'page-search-location',
-  templateUrl: 'search-location.html',
+    selector: 'page-search-location',
+    templateUrl: 'search-location.html',
 })
 export class SearchLocationPage {
-  public savedLocations;
+    public savedLocations;
 
-  autocompleteItems;
-  autocomplete;
-  service = new google.maps.places.AutocompleteService();
-  @ViewChild('searchBarLocation') searchBar: Searchbar;
+    autocompleteItems;
+    autocomplete;
+    service = new google.maps.places.AutocompleteService();
+    @ViewChild('searchBarLocation') searchBar: Searchbar;
 
-  constructor(private locationProvider: LocationProvider, private searchProvider: SearchProvider, public viewCtrl: ViewController, private zone: NgZone) {
+    constructor(private locationProvider: LocationProvider, private searchProvider: SearchProvider, public viewCtrl: ViewController, private zone: NgZone) {
 
-    this.autocompleteItems = [];
-    this.autocomplete = {
-      query: ''
-    };
-  }
-
-  ionViewDidLoad() {
-    this.updateSavedLocations();
-  }
-
-  private updateSavedLocations() {
-    this.savedLocations = this.searchProvider.updateSavedLocations();
-  }
-
-  ngOnInit() {
-    setTimeout(() => {
-      this.searchBar.setFocus();
-    }, 600);
-  }
-
-
-  dismiss() {
-    this.viewCtrl.dismiss();
-  }
-
-  chooseItem(item: any) {
-    this.searchProvider.setLocation(item);
-    this.dismiss()
-  }
-
-  chooseCurrentLocation() {
-    if (!this.locationProvider.current) {
-      this.locationProvider.getCurrentLocation().then(response => {
-          this.searchProvider.setLocation(response);
-
-          this.dismiss();
-        }
-      );
-    } else {
-      this.dismiss();
+        this.autocompleteItems = [];
+        this.autocomplete = {
+            query: ''
+        };
     }
-  }
 
-  updateSearch() {
-    if (this.autocomplete.query == '') {
-      this.autocompleteItems = [];
-      return;
+    ionViewDidLoad() {
+        this.updateSavedLocations();
     }
-    let me = this;
-    this.service.getPlacePredictions({
-      input: this.autocomplete.query,
-      componentRestrictions: {country: 'BR'}
-    }, function (predictions, status) {
-      me.autocompleteItems = [];
-      me.zone.run(function () {
-        if (predictions) {
-          predictions.forEach(function (prediction) {
-            me.autocompleteItems.push(prediction.description);
-          });
+
+    private updateSavedLocations() {
+        this.savedLocations = this.searchProvider.updateSavedLocations();
+    }
+
+    ngOnInit() {
+        setTimeout(() => {
+            this.searchBar.setFocus();
+        }, 600);
+    }
+
+
+    dismiss() {
+        this.viewCtrl.dismiss();
+    }
+
+    chooseItem(item: any) {
+        this.searchProvider.setLocation(item);
+        this.dismiss()
+    }
+
+    chooseCurrentLocation() {
+        let cur = this.locationProvider.current;
+
+        if (!cur) {
+            this.locationProvider.getCurrentLocation().then(response => {
+                    this.chooseItem(response);
+                }
+            );
+        } else {
+            this.chooseItem(cur);
         }
-      });
-    });
-  }
+    }
+
+    updateSearch() {
+        if (this.autocomplete.query == '') {
+            this.autocompleteItems = [];
+            return;
+        }
+        let me = this;
+        this.service.getPlacePredictions({
+            input: this.autocomplete.query,
+            componentRestrictions: {country: 'BR'}
+        }, function (predictions, status) {
+            me.autocompleteItems = [];
+            me.zone.run(function () {
+                if (predictions) {
+                    predictions.forEach(function (prediction) {
+                        me.autocompleteItems.push(prediction.description);
+                    });
+                }
+            });
+        });
+    }
 }

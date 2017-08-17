@@ -1,6 +1,8 @@
 import {EventEmitter, Injectable, Output} from '@angular/core';
 import {Http} from '@angular/http';
 import 'rxjs/add/operator/map';
+import {LocationProvider} from "../location/location";
+import {Subject} from "rxjs/Subject";
 
 /*
  Generated class for the SearchProvider provider.
@@ -10,39 +12,48 @@ import 'rxjs/add/operator/map';
  */
 @Injectable()
 export class SearchProvider {
-  public location;
-  public payment;
-  @Output() open: EventEmitter<any> = new EventEmitter();
+    public location;
+    public payment;
+    public invokeEventLocation: Subject<any> = new Subject();
 
-  constructor(public http: Http) {
-    console.log('Hello SearchProvider Provider');
-  }
+    constructor(public http: Http, public locationProvider: LocationProvider) {
 
-  public getLocation() {
-    return this.location;
-  }
+        this.getCurrentLocation();
+    }
 
-  public setLocation(location) {
-    this.location = location;
-  }
+    private getCurrentLocation() {
+        this.locationProvider.getCurrentLocation().then(response => {
+                this.location = response;
+            }
+        );
+    }
 
-  public getPayment() {
-    return this.payment;
-  }
+    public getLocation() {
+        return this.location;
+    }
 
-  public setPayment(payment) {
-    this.payment = payment;
-  }
+    public setLocation(location) {
+        this.invokeEventLocation.next(location);
+        this.location = location;
+    }
 
-  public updateSavedLocations() {
-    return [{
-      label: "Trabalho",
-      icon: "briefcase",
-      address: "Endereco 1"
-    }, {
-      label: "Casa",
-      icon: "home",
-      address: "Endereco 2"
-    }];
-  }
+    public getPayment() {
+        return this.payment;
+    }
+
+    public setPayment(payment) {
+        this.payment = payment;
+    }
+
+    public updateSavedLocations() {
+        return [{
+            label: "Trabalho",
+            icon: "briefcase",
+            address: "Endereco 1"
+        }, {
+            label: "Casa",
+            icon: "home",
+            address: "Endereco 2"
+        }];
+    }
 }
