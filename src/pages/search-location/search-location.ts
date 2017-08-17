@@ -51,6 +51,11 @@ export class SearchLocationPage {
     }
 
     chooseItem(item: any) {
+        if (typeof item === "string") {
+            item = {
+                address: item
+            }
+        }
         this.searchProvider.setLocation(item);
         this.dismiss()
     }
@@ -64,7 +69,7 @@ export class SearchLocationPage {
                 }
             );
         } else {
-            this.chooseItem(cur);
+            this.chooseItem(this.locationProvider.current);
         }
     }
 

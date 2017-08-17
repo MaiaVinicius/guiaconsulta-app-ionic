@@ -23,7 +23,7 @@ export class SearchProvider {
 
     private getCurrentLocation() {
         this.locationProvider.getCurrentLocation().then(response => {
-                this.location = response;
+                this.setLocation(response);
             }
         );
     }
