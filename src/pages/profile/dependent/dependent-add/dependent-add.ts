@@ -16,10 +16,10 @@ import {DependentProvider} from "../../../../providers/dependent/dependent";
 export class DependentAddPage {
     @ViewChild('inputName') inputName;
     public dependent = {};
-    public relationship = [];
+    public relationships = [];
 
     constructor(private dependenteProvider: DependentProvider, public viewCtrl: ViewController, public navCtrl: NavController, public navParams: NavParams) {
-        this.relationship = dependenteProvider.getRelationships();
+        this.relationships = dependenteProvider.getRelationships();
     }
 
     ionViewDidLoad() {
