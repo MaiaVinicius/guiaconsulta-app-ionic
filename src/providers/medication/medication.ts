@@ -13,8 +13,10 @@ import {Subject} from "rxjs/Subject";
 export class MedicationProvider {
     private reminders = [
         {
-            medication_id: "34",
-            name: "Dorflex",
+            medication:{
+                id: 123,
+                name: "Dorflex"
+            },
             times: "14:00",
             unit: "1.25 Comprimido"
         }
