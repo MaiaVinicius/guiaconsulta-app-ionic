@@ -52,6 +52,10 @@
     color: #fff;
   }
 
+  .item-select .label{
+    text-transform: none!important;
+    font-weight: 400!important;
+  }
 }
 
 .item-input, .item-select, .item-range, .item-datetime {

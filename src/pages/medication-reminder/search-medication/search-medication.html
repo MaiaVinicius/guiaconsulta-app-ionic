@@ -5,22 +5,22 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-   <ion-toolbar>
-      <ion-title></ion-title>
-      <ion-searchbar #searchBarMedication placeholder="Busque por nome do medicamento..."
-                     [showCancelButton]="true" (ionCancel)="dismiss()"></ion-searchbar>
+    <ion-toolbar>
+        <ion-title></ion-title>
+        <ion-searchbar #searchBarMedication placeholder="Busque por nome do medicamento..."
+                       [showCancelButton]="true" (ionCancel)="dismiss()"></ion-searchbar>
     </ion-toolbar>
 </ion-header>
 
 
 <ion-content>
-  <ion-list>
-    <button ion-item (click)="chooseMedication()">
-      <ion-avatar item-start>
-        <img src="https://plataforma.memed.com.br/resources/img/tarjas/vermelho.png">
-      </ion-avatar>
-      Dorflex
-      <p>Ebastina 10mg</p>
-    </button>
-  </ion-list>
+    <ion-list>
+        <button ion-item (click)="chooseMedication(medication)" *ngFor="let medication of medications">
+            <ion-avatar item-start>
+                <img src="{{medication.img}}">
+            </ion-avatar>
+            {{medication.name}}
+            <p>{{medication.made}}</p>
+        </button>
+    </ion-list>
 </ion-content>

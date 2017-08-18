@@ -30,8 +30,14 @@ export class MedicationReminderAddPage {
         this.viewCtrl.dismiss();
     }
 
+    getMedication(evt) {
+        console.log(evt)
+    }
+
     searchMedication() {
-        let modal = this.modalCtrl.create(SearchMedicationPage);
+        let modal = this.modalCtrl.create(SearchMedicationPage, {
+            "chooseMedication": "getMedication($event)"
+        });
         modal.present();
     }
 }

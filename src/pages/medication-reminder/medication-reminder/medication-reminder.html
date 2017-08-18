@@ -32,8 +32,14 @@
     </ion-card-content>
   </ion-card>
 </ion-content>
-<ion-footer no-shadow padding>
-  <button (click)="registerMedication()" ion-button block icon-start>
-    Adicionar lembrete
-  </button>
+<ion-footer>
+  <ion-grid>
+    <ion-row no-padding no-margin>
+      <ion-col col-12 no-padding>
+        <button (click)="registerMedication()" ion-button block icon-start>
+          Adicionar lembrete
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-footer>
