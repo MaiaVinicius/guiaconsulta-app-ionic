@@ -65,6 +65,7 @@ import {InsuranceProvider} from '../providers/insurance/insurance';
 import {MedicationProvider} from '../providers/medication/medication';
 import {ProfileWizardProvider} from '../providers/profile-wizard/profile-wizard';
 import {AttendanceFormPage} from "../pages/attendance-form/attendance-form";
+import { UserProvider } from '../providers/user/user';
 
 @NgModule({
     declarations: [
@@ -184,7 +185,8 @@ import {AttendanceFormPage} from "../pages/attendance-form/attendance-form";
         DependentProvider,
         InsuranceProvider,
         MedicationProvider,
-        ProfileWizardProvider
+        ProfileWizardProvider,
+    UserProvider
     ]
 })
 
