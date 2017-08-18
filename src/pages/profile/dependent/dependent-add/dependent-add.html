@@ -6,64 +6,61 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>Novo dependente</ion-title>
-    <ion-buttons start>
-      <button ion-button (click)="dismiss()">
-        <span ion-text color="primary" showWhen="ios">Cancelar</span>
-        <ion-icon name="md-close" showWhen="android,windows"></ion-icon>
-      </button>
-    </ion-buttons>
-  </ion-navbar>
+    <ion-navbar>
+        <ion-title>Novo dependente</ion-title>
+        <ion-buttons start>
+            <button ion-button (click)="dismiss()">
+                <span ion-text color="primary" showWhen="ios">Cancelar</span>
+                <ion-icon name="md-close" showWhen="android,windows"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-  <ion-item>
-    <ion-label stacked>Nome completo</ion-label>
-    <ion-input #inputName type="text" [(ngModel)]="dependent.name"></ion-input>
-  </ion-item>
+    <ion-item>
+        <ion-label stacked>Nome completo</ion-label>
+        <ion-input #inputName type="text" [(ngModel)]="dependent.name"></ion-input>
+    </ion-item>
 
-  <ion-item>
-    <ion-label stacked>Data de nascimento</ion-label>
-    <ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="dependent.myDate"></ion-datetime>
-  </ion-item>
+    <ion-item>
+        <ion-label stacked>Data de nascimento</ion-label>
+        <ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="dependent.myDate"></ion-datetime>
+    </ion-item>
 
-  <ion-item>
-    <ion-label stacked>Celular</ion-label>
-    <ion-input type="tel" [(ngModel)]="dependent.celphone"></ion-input>
-  </ion-item>
+    <ion-item>
+        <ion-label stacked>Celular</ion-label>
+        <ion-input type="tel" [(ngModel)]="dependent.celphone"></ion-input>
+    </ion-item>
 
-  <ion-item>
-    <ion-label stacked>Relacionamento</ion-label>
-    <ion-select [(ngModel)]="dependent.relationship">
-      <ion-option value="1">Filho(a)</ion-option>
-      <ion-option value="2">Sobrinho(a)</ion-option>
-      <ion-option value="3">Primo(a)</ion-option>
-      <ion-option value="4">Tio(a)</ion-option>
-      <ion-option value="5">Pai/Mãe</ion-option>
-      <ion-option value="6">Avô/Avó</ion-option>
-    </ion-select>
-  </ion-item>
+    <ion-item>
+        <ion-label stacked>Relacionamento</ion-label>
+        <ion-select [(ngModel)]="dependent.relationship">
+            <ion-option value="{{relationship.id}}" *ngFor="let relationship of relationships">
+                {{relationship.name}}
+            </ion-option>
+        </ion-select>
+    </ion-item>
 
-  <ion-item>
-    <ion-label stacked>Sexo</ion-label>
-    <ion-select [(ngModel)]="dependent.gender">
-      <ion-option value="1">Masculino</ion-option>
-      <ion-option value="2">Feminino</ion-option>
-    </ion-select>
-  </ion-item>
+    <ion-item>
+        <ion-label stacked>Sexo</ion-label>
+        <ion-select [(ngModel)]="dependent.gender">
+            <ion-option value="1">Masculino</ion-option>
+            <ion-option value="2">Feminino</ion-option>
+        </ion-select>
+    </ion-item>
 </ion-content>
 <ion-footer>
-  <ion-grid>
-    <ion-row no-margin>
-      <ion-col col-12>
-        <button (click)="addDependent()" ion-button block icon-start>
-          Adicionar dependente
-        </button>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+    <ion-grid>
+        <ion-row no-margin>
+            <ion-col col-12>
+                <button (click)="addDependent()" ion-button block icon-start>
+                    Adicionar dependente
+                </button>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
 </ion-footer>
 

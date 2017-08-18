@@ -10,29 +10,46 @@ import 'rxjs/add/operator/map';
  */
 @Injectable()
 export class DependentProvider {
-  private dependents = [{
-    id: 2,
-    name: "João",
-    relationship: "Filho (a)"
-  }, {
-    id: 3,
-    name: "Maria",
-    relationship: "Filho (a)"
-  }, {
-    id: 4,
-    name: "Rafaela",
-    relationship: "Sobrinho (a)"
-  },];
+    private dependents = [
+        {
+            id: 2,
+            name: "João",
+            relationship: "Filho (a)"
+        }, {
+            id: 3,
+            name: "Maria",
+            relationship: "Filho (a)"
+        }, {
+            id: 4,
+            name: "Rafaela",
+            relationship: "Sobrinho (a)"
+        }
+    ];
+    private relationships = [
+        {
+            id: 1,
+            name: "Filho(a)"
+        },
+        {
+            id: 2,
+            name: "Pai/Mae"
+        }
+    ];
 
-  constructor(public http: Http) {
-    console.log('Hello DependentProvider Provider');
-  }
 
-  addDependent(dependent) {
-    this.dependents.push(dependent);
-  }
+    constructor(public http: Http) {
+        console.log('Hello DependentProvider Provider');
+    }
 
-  getDependents() {
-    return this.dependents;
-  }
+    getRelationships() {
+        return this.relationships;
+    }
+
+    addDependent(dependent) {
+        this.dependents.push(dependent);
+    }
+
+    getDependents() {
+        return this.dependents;
+    }
 }

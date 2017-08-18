@@ -10,29 +10,31 @@ import {DependentProvider} from "../../../../providers/dependent/dependent";
  */
 
 @Component({
-  selector: 'page-dependent-add',
-  templateUrl: 'dependent-add.html',
+    selector: 'page-dependent-add',
+    templateUrl: 'dependent-add.html',
 })
 export class DependentAddPage {
-  @ViewChild('inputName') inputName;
-  public dependent = {};
+    @ViewChild('inputName') inputName;
+    public dependent = {};
+    public relationship = [];
 
-  constructor(private dependenteProvider: DependentProvider, public viewCtrl: ViewController, public navCtrl: NavController, public navParams: NavParams) {
-  }
+    constructor(private dependenteProvider: DependentProvider, public viewCtrl: ViewController, public navCtrl: NavController, public navParams: NavParams) {
+        this.relationship = dependenteProvider.getRelationships();
+    }
 
-  ionViewDidLoad() {
-    setTimeout(() => {
-      this.inputName.setFocus();
-    }, 500);
-  }
+    ionViewDidLoad() {
+        setTimeout(() => {
+            this.inputName.setFocus();
+        }, 500);
+    }
 
-  addDependent() {
-    this.dependenteProvider.addDependent(this.dependent);
-    this.dependent = {};
-    this.dismiss();
-  }
+    addDependent() {
+        this.dependenteProvider.addDependent(this.dependent);
+        this.dependent = {};
+        this.dismiss();
+    }
 
-  dismiss() {
-    this.viewCtrl.dismiss();
-  }
+    dismiss() {
+        this.viewCtrl.dismiss();
+    }
 }
