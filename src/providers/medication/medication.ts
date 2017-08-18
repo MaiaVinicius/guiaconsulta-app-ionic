@@ -19,6 +19,17 @@ export class MedicationProvider {
         }
     ];
 
+    private medicationUnits = [
+        {
+            id: 1,
+            name: "Gota"
+        },
+        {
+            id: 2,
+            name: "Comprimido"
+        }
+    ];
+
     constructor(public http: Http) {
     }
 
@@ -28,5 +39,9 @@ export class MedicationProvider {
 
     getReminders() {
         return this.reminders;
+    }
+
+    getMedicationUnits() {
+        return this.medicationUnits;
     }
 }

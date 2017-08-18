@@ -16,9 +16,11 @@ import {MedicationProvider} from "../../../providers/medication/medication";
 })
 export class MedicationReminderAddPage {
     public medication = {};
+    public units = [];
     public today: String = new Date().toISOString();
 
     constructor(private medicationProvider: MedicationProvider, public modalCtrl: ModalController, public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController) {
+        this.units = medicationProvider.getMedicationUnits();
     }
 
     addMedication() {
