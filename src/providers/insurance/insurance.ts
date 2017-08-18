@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {Http} from '@angular/http';
 import 'rxjs/add/operator/map';
+import {Subject} from "rxjs/Subject";
 
 /*
  Generated class for the InsuranceProvider provider.
@@ -17,9 +18,26 @@ export class InsuranceProvider {
       owner: 2
     }
   ];
+  public invokeEventInsurance: Subject<any> = new Subject();
+  private searchInsurances = [
+    {
+      name: "Bradesco",
+    },
+    {
+      name: "Sul America"
+    }
+  ];
 
   constructor(public http: Http) {
     console.log('Hello InsuranceProvider Provider');
+  }
+
+  setInsurance(insurance) {
+    this.invokeEventInsurance.next(insurance);
+  }
+
+  getInsurances(keyword) {
+    return this.searchInsurances;
   }
 
   getRegisteredInsurances() {

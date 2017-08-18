@@ -15,9 +15,12 @@ import {InsuranceProvider} from "../../../../providers/insurance/insurance";
   templateUrl: 'insurance-add.html',
 })
 export class InsuranceAddPage {
-  public insurance = {plan:0};
+  public insurance = {insurance: {}};
 
   constructor(private insuranceProvider: InsuranceProvider, public viewCtrl: ViewController, public navCtrl: NavController, public navParams: NavParams) {
+    this.insuranceProvider.invokeEventInsurance.subscribe((value) => {
+      this.insurance.insurance = value;
+    })
   }
 
   addInsurance() {

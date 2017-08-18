@@ -1,5 +1,6 @@
 import {Component, ViewChild} from '@angular/core';
 import {NavController, NavParams, Searchbar, ViewController} from 'ionic-angular';
+import {InsuranceProvider} from "../../../../providers/insurance/insurance";
 
 /**
  * Generated class for the InsuranceSearchPage page.
@@ -14,19 +15,22 @@ import {NavController, NavParams, Searchbar, ViewController} from 'ionic-angular
 })
 export class InsuranceSearchPage {
   @ViewChild('searchBarInsurance') searchBar: Searchbar;
+  public insurances;
+  public keyword;
 
-  constructor(public viewCtrl: ViewController, public navCtrl: NavController, public navParams: NavParams) {
+  constructor(private insuranceProvider: InsuranceProvider, public viewCtrl: ViewController, public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad InsuranceSearchPage');
+    this.insurances = this.insuranceProvider.getInsurances(this.keyword);
   }
 
   dismiss() {
     this.viewCtrl.dismiss();
   }
 
-  chooseInsurance() {
+  chooseInsurance(insurance) {
+    this.insuranceProvider.setInsurance(insurance);
     this.viewCtrl.dismiss();
   }
 

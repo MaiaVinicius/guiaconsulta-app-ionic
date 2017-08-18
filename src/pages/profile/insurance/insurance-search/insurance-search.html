@@ -15,11 +15,8 @@
 
 <ion-content>
   <ion-list>
-    <button (click)="chooseInsurance()" ion-item tappable icon-start>
-      Bradesco
-    </button>
-    <button (click)="chooseInsurance()" ion-item tappable icon-start>
-      Amil
+    <button *ngFor="let insurance of insurances" (click)="chooseInsurance(insurance)" ion-item tappable icon-start>
+      {{insurance.name}}
     </button>
   </ion-list>
 </ion-content>
