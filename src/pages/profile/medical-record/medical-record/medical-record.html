@@ -16,8 +16,14 @@
 <ion-content padding>
 
 </ion-content>
-<ion-footer no-shadow padding>
-  <button (click)="presentActionSheet()" ion-button block icon-start >
-    Adicionar lembrete
-  </button>
+<ion-footer>
+  <ion-grid>
+    <ion-row no-margin>
+      <ion-col col-12>
+        <button (click)="presentActionSheet()" ion-button block icon-start>
+          Adicionar prontuário
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-footer>

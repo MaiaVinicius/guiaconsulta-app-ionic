@@ -21,8 +21,14 @@
     </ion-card-content>
   </ion-card>
 </ion-content>
-<ion-footer no-shadow padding>
-  <button (click)="addDependent()" ion-button block icon-start>
-    Adicionar dependente
-  </button>
+<ion-footer>
+  <ion-grid>
+    <ion-row no-margin>
+      <ion-col col-12>
+        <button (click)="addDependent()" ion-button block icon-start>
+          Adicionar dependente
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-footer>
