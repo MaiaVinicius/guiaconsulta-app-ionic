@@ -7,20 +7,24 @@
 <ion-header>
     <ion-toolbar>
         <ion-title></ion-title>
-        <ion-searchbar #searchBarMedication placeholder="Busque por nome do medicamento..."
+        <ion-searchbar (ionInput)="updateSearch()" [(ngModel)]="keyword" #searchBarMedication
+                       placeholder="Busque por nome do medicamento..."
                        [showCancelButton]="true" (ionCancel)="dismiss()"></ion-searchbar>
     </ion-toolbar>
 </ion-header>
 
 
 <ion-content>
+
+    <ion-spinner *ngIf="loading" class="spinner-center"></ion-spinner>
+
     <ion-list>
         <button ion-item (click)="chooseMedication(medication)" *ngFor="let medication of medications">
             <ion-avatar item-start>
-                <img src="{{medication.img}}">
+                <img src="{{medication.attributes.thumbnail}}">
             </ion-avatar>
-            {{medication.name}}
-            <p>{{medication.made}}</p>
+            {{medication.attributes.titulo}}
+            <p>{{medication.attributes.subtitulo}}</p>
         </button>
     </ion-list>
 </ion-content>

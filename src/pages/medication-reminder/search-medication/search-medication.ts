@@ -15,20 +15,9 @@ import {MedicationProvider} from "../../../providers/medication/medication";
 })
 export class SearchMedicationPage {
     @ViewChild('searchBarMedication') searchBar: Searchbar;
-    endpoint = "http://integracao.api.memed.com.br/v1/apresentacoes";
+    public keyword: string;
 
-    public medications = [
-        {
-            name: "Dorflex",
-            img: "https://plataforma.memed.com.br/resources/img/tarjas/vermelho.png",
-            made: "Popo"
-        },
-        {
-            name: "Ebastina",
-            img: "https://plataforma.memed.com.br/resources/img/tarjas/vermelho.png",
-            made: "Pipo"
-        }
-    ];
+    public medications;
 
     constructor(private medicationProvider: MedicationProvider, public viewCtrl: ViewController, public navCtrl: NavController, public navParams: NavParams) {
     }
@@ -42,6 +31,22 @@ export class SearchMedicationPage {
             this.searchBar.setFocus();
         }, 800);
     }
+
+
+    private delayTimer;
+    public loading = false;
+
+    updateSearch() {
+        clearTimeout(this.delayTimer);
+        this.loading = true;
+        this.delayTimer = setTimeout(() => {
+            this.medicationProvider.getMedications(this.keyword).then((medications) => {
+                this.medications = medications;
+                this.loading = false;
+            });
+        }, 200);
+    }
+
 
     chooseMedication(medication) {
         this.medicationProvider.invokeEventMedication.next(medication);

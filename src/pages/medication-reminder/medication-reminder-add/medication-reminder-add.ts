@@ -18,7 +18,9 @@ export class MedicationReminderAddPage {
     public units = [];
     public today: String = new Date().toISOString();
     public reminder = {
-        medication: {},
+        medication: {
+            attributes: {}
+        },
         start: this.today
     };
 

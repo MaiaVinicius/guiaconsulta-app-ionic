@@ -17,7 +17,7 @@
 <ion-content>
   <ion-card *ngFor="let reminder of reminders">
     <ion-card-header>
-      {{reminder.medication.name}}
+      {{reminder.medication.attributes.titulo}}
     </ion-card-header>
     <ion-card-content>
       {{reminder.unit}} <br>
