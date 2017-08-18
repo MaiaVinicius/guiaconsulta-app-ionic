@@ -22,7 +22,7 @@ export class InsuranceAddPage {
 
   addInsurance() {
     this.insuranceProvider.addInsurance(this.insurance);
-    // this.insurance = {};
+    this.dismiss();
   }
 
   searchInsurance() {
