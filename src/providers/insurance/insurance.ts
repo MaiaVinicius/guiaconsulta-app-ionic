@@ -13,7 +13,10 @@ import {Subject} from "rxjs/Subject";
 export class InsuranceProvider {
   private registeredInsurances = [
     {
-      name: "Bradesco",
+      insurance: {
+        id: 1,
+        name: "Bradesco"
+      },
       plan: "DELTA",
       owner: 2
     }

@@ -38,8 +38,12 @@
   <ion-item>
     <ion-label stacked>Proprietário</ion-label>
     <ion-select [(ngModel)]="insurance.owner" cancelText="Cancelar" okText="Definir">
-      <ion-option value="0" selected="true">Vinicius</ion-option>
-      <ion-option value="1">Jonas Cardoso</ion-option>
+      <ion-option value="{{user.id}}">
+        {{user.name}}
+      </ion-option>
+      <ion-option *ngFor="let dependent of dependents" value="{{dependent.id}}">
+        {{dependent.name}}
+      </ion-option>
     </ion-select>
   </ion-item>
 </ion-content>

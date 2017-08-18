@@ -11,12 +11,15 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class DependentProvider {
   private dependents = [{
+    id: 2,
     name: "João",
     relationship: "Filho (a)"
   }, {
+    id: 3,
     name: "Maria",
     relationship: "Filho (a)"
   }, {
+    id: 4,
     name: "Rafaela",
     relationship: "Sobrinho (a)"
   },];
