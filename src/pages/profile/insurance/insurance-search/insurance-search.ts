@@ -22,7 +22,7 @@ export class InsuranceSearchPage {
   }
 
   ionViewDidLoad() {
-    this.insurances = this.insuranceProvider.getInsurances(this.keyword);
+    this.insurances = this.insuranceProvider.getMainInsurances();
   }
 
   dismiss() {
@@ -38,5 +38,14 @@ export class InsuranceSearchPage {
     setTimeout(() => {
       this.searchBar.setFocus();
     }, 800);
+  }
+
+  private delayTimer;
+
+  updateSearch() {
+    clearTimeout(this.delayTimer);
+    this.delayTimer = setTimeout(() => {
+      this.insurances = this.insuranceProvider.getInsurances(this.keyword);
+    }, 300);
   }
 }

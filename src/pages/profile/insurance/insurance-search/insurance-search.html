@@ -7,7 +7,7 @@
 <ion-header>
   <ion-toolbar>
     <ion-title></ion-title>
-    <ion-searchbar #searchBarInsurance placeholder="Busque por nome do convênio..."
+    <ion-searchbar (ionInput)="updateSearch()" #searchBarInsurance placeholder="Busque por nome do convênio..."
                    [showCancelButton]="true" (ionCancel)="dismiss()"></ion-searchbar>
   </ion-toolbar>
 </ion-header>

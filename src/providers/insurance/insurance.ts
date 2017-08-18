@@ -36,6 +36,10 @@ export class InsuranceProvider {
     this.invokeEventInsurance.next(insurance);
   }
 
+  getMainInsurances() {
+    return this.searchInsurances;
+  }
+
   getInsurances(keyword) {
     return this.searchInsurances;
   }
