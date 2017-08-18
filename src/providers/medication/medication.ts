@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {Http} from '@angular/http';
 import 'rxjs/add/operator/map';
+import {Subject} from "rxjs/Subject";
 
 /*
  Generated class for the MedicationProvider provider.
@@ -18,7 +19,7 @@ export class MedicationProvider {
             unit: "1.25 Comprimido"
         }
     ];
-
+    public invokeEventMedication: Subject<any> = new Subject();
     private medicationUnits = [
         {
             id: 1,
@@ -33,7 +34,7 @@ export class MedicationProvider {
     constructor(public http: Http) {
     }
 
-    addMedication(medicationReminder) {
+    addMedicationReminder(medicationReminder) {
         this.reminders.push(medicationReminder);
     }
 

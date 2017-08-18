@@ -15,16 +15,26 @@ import {MedicationProvider} from "../../../providers/medication/medication";
     templateUrl: 'medication-reminder-add.html',
 })
 export class MedicationReminderAddPage {
-    public medication = {};
     public units = [];
     public today: String = new Date().toISOString();
+    public reminder = {
+        medication: {},
+        start: this.today
+    };
 
     constructor(private medicationProvider: MedicationProvider, public modalCtrl: ModalController, public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController) {
-        this.units = medicationProvider.getMedicationUnits();
+
+    }
+
+    ngOnInit() {
+        this.units = this.medicationProvider.getMedicationUnits();
+        this.medicationProvider.invokeEventMedication.subscribe((value) => {
+            this.reminder.medication = value;
+        });
     }
 
     addMedication() {
-        this.medicationProvider.addMedication(this.medication);
+        this.medicationProvider.addMedicationReminder(this.reminder);
         this.dismiss();
     }
 
@@ -37,9 +47,7 @@ export class MedicationReminderAddPage {
     }
 
     searchMedication() {
-        let modal = this.modalCtrl.create(SearchMedicationPage, {
-            "chooseMedication": "getMedication($event)"
-        });
+        let modal = this.modalCtrl.create(SearchMedicationPage);
         modal.present();
     }
 }

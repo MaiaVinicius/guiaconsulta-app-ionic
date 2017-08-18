@@ -1,6 +1,6 @@
-import {Component, EventEmitter, Output, ViewChild} from '@angular/core';
+import {Component, ViewChild} from '@angular/core';
 import {NavController, NavParams, Searchbar, ViewController} from 'ionic-angular';
-// import {Http} from "@angular/http";
+import {MedicationProvider} from "../../../providers/medication/medication";
 
 /**
  * Generated class for the SearchMedicationPage page.
@@ -16,7 +16,6 @@ import {NavController, NavParams, Searchbar, ViewController} from 'ionic-angular
 export class SearchMedicationPage {
     @ViewChild('searchBarMedication') searchBar: Searchbar;
     endpoint = "http://integracao.api.memed.com.br/v1/apresentacoes";
-    @Output() sendMedication: EventEmitter<any> = new EventEmitter();
 
     public medications = [
         {
@@ -31,7 +30,7 @@ export class SearchMedicationPage {
         }
     ];
 
-    constructor(public viewCtrl: ViewController, public navCtrl: NavController, public navParams: NavParams) {
+    constructor(private medicationProvider: MedicationProvider, public viewCtrl: ViewController, public navCtrl: NavController, public navParams: NavParams) {
     }
 
     dismiss() {
@@ -45,7 +44,7 @@ export class SearchMedicationPage {
     }
 
     chooseMedication(medication) {
-        this.sendMedication.emit(medication);
+        this.medicationProvider.invokeEventMedication.next(medication);
         this.viewCtrl.dismiss();
     }
 }

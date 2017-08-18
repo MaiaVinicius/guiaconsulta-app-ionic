@@ -26,7 +26,7 @@
                 <ion-col>
                     <ion-item>
                         <ion-label stacked>Nome do medicamento</ion-label>
-                        <ion-input (ionFocus)="searchMedication()" type="text"
+                        <ion-input [(ngModel)]="reminder.medication.name" (ionFocus)="searchMedication()" type="text"
                                    placeholder="Nome do medicamento"></ion-input>
                     </ion-item>
                 </ion-col>
@@ -35,7 +35,7 @@
                 <ion-col>
                     <ion-item>
                         <ion-label stacked>Indicação</ion-label>
-                        <ion-input [(ngModel)]="medication.indication" type="text"
+                        <ion-input [(ngModel)]="reminder.indication" type="text"
                                    placeholder="Ex: Dor nas costas"></ion-input>
                     </ion-item>
                 </ion-col>
@@ -44,13 +44,13 @@
                 <ion-col>
                     <ion-item>
                         <ion-label stacked>Dosagem</ion-label>
-                        <ion-input [(ngModel)]="medication.dosage" type="number" placeholder="Ex: 1.25"></ion-input>
+                        <ion-input [(ngModel)]="reminder.dosage" type="number" placeholder="Ex: 1.25"></ion-input>
                     </ion-item>
                 </ion-col>
                 <ion-col>
                     <ion-item>
                         <ion-label stacked>Unidade</ion-label>
-                        <ion-select [(ngModel)]="medication.unit" cancelText="Cancelar" okText="Selecionar">
+                        <ion-select [(ngModel)]="reminder.unit" cancelText="Cancelar" okText="Selecionar">
                             <ion-option value="{{unit.id}}" *ngFor="let unit of units">
                                 {{unit.name}}
                             </ion-option>
@@ -62,14 +62,14 @@
                 <ion-col col-6>
                     <ion-item>
                         <ion-label stacked>Inicio do tratamento</ion-label>
-                        <ion-datetime [(ngModel)]="medication.start" min="{{today}}" displayFormat="DD/MM/YYYY"
+                        <ion-datetime [(ngModel)]="reminder.start" min="{{today}}" displayFormat="DD/MM/YYYY"
                                       [(ngModel)]="treatmentStart"></ion-datetime>
                     </ion-item>
                 </ion-col>
                 <ion-col col-6>
                     <ion-item>
                         <ion-label stacked>Duração em dias</ion-label>
-                        <ion-input [(ngModel)]="medication.duration" placeholder="Ex: 4" type="number"></ion-input>
+                        <ion-input [(ngModel)]="reminder.duration" placeholder="Ex: 4" type="number"></ion-input>
                     </ion-item>
                 </ion-col>
             </ion-row>
