@@ -10,16 +10,17 @@ import 'rxjs/add/operator/map';
  */
 @Injectable()
 export class UserProvider {
-  private user = {
-    id: 1,
-    name: "Vinicius Maia"
-  };
+    private user = {
+        id: 1,
+        name: "Vinicius Maia"
+    };
 
-  constructor(public http: Http) {
-  }
+    constructor(public http: Http) {
+    }
 
-  getUser() {
-    return this.user;
-  }
+    getUser() {
+        return this.user;
+    }
+
 
 }

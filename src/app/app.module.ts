@@ -65,7 +65,20 @@ import {InsuranceProvider} from '../providers/insurance/insurance';
 import {MedicationProvider} from '../providers/medication/medication';
 import {ProfileWizardProvider} from '../providers/profile-wizard/profile-wizard';
 import {AttendanceFormPage} from "../pages/attendance-form/attendance-form";
-import { UserProvider } from '../providers/user/user';
+import {UserProvider} from '../providers/user/user';
+import {AuthConfig, AuthHttp} from "angular2-jwt";
+import {Storage} from '@ionic/storage';
+
+let storage = new Storage({});
+
+export function getAuthHttp(http) {
+    return new AuthHttp(new AuthConfig({
+        headerPrefix: "GC_BACK_FORWARD_",
+        noJwtError: true,
+        globalHeaders: [{'Accept': 'application/json'}],
+        tokenGetter: (() => storage.get('token')),
+    }), http);
+}
 
 @NgModule({
     declarations: [
@@ -173,6 +186,11 @@ import { UserProvider } from '../providers/user/user';
         StatusBar,
         SplashScreen,
         {provide: ErrorHandler, useClass: IonicErrorHandler},
+        {
+            provide: AuthHttp,
+            useFactory: getAuthHttp,
+            deps: [Http]
+        },
         SearchProvider,
 
         File,
@@ -186,7 +204,7 @@ import { UserProvider } from '../providers/user/user';
         InsuranceProvider,
         MedicationProvider,
         ProfileWizardProvider,
-    UserProvider
+        UserProvider
     ]
 })
 
