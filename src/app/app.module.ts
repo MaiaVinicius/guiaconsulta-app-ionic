@@ -193,6 +193,7 @@ export function getAuthHttp(http) {
         },
         SearchProvider,
 
+        StatusBar,
         File,
         Transfer,
         Camera,
