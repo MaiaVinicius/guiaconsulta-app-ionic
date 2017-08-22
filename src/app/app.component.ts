@@ -49,7 +49,7 @@ export class MyApp {
       // Here you can do any higher level native things you might need.
       // this.statusBar.styleDefault();
       // this.statusBar.overlaysWebView(true);
-      this.statusBar.backgroundColorByHexString('#2c98d1');
+      this.statusBar.backgroundColorByHexString('#237aa8');
 
       this.splashScreen.hide();
     });
