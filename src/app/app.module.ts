@@ -1,6 +1,6 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {ErrorHandler, NgModule} from '@angular/core';
-import {IonicApp, IonicErrorHandler, IonicModule, IonicPageModule, Platform} from 'ionic-angular';
+import {IonicApp, IonicErrorHandler, IonicModule} from 'ionic-angular';
 
 import {MyApp} from './app.component';
 import {HomePage} from '../pages/home/home';
@@ -14,15 +14,7 @@ import {Ionic2RatingModule} from 'ionic2-rating';
 import {ConfigurationsPage} from "../pages/profile/configurations/configurations";
 import {IndexPage} from "../pages/index/index";
 import {HelpPage} from "../pages/profile/help/help";
-//wizard profile
-import {StepEmailPage} from "../pages/profile/profile-wizard/personal/step-email/step-email";
-import {StepGenderPage} from "../pages/profile/profile-wizard/personal/step-gender/step-gender";
-import {StepBirthPage} from "../pages/profile/profile-wizard/personal/step-birth/step-birth";
-import {StepBloodGroupPage} from "../pages/profile/profile-wizard/personal/step-blood-group/step-blood-group";
-import {StepMaritalStatusPage} from "../pages/profile/profile-wizard/personal/step-marital-status/step-marital-status";
-import {StepHeightPage} from "../pages/profile/profile-wizard/personal/step-height/step-height";
-import {StepWeightPage} from "../pages/profile/profile-wizard/personal/step-weight/step-weight";
-import {StepLocationPage} from "../pages/profile/profile-wizard/personal/step-location/step-location";
+
 //others
 import {InviteDoctorPage} from "../pages/invite-doctor/invite-doctor";
 import {LoginPage} from "../pages/login/login";
