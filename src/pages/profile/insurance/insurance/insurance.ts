@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {ModalController, NavController, NavParams} from 'ionic-angular';
+import {IonicPage, ModalController, NavController, NavParams} from 'ionic-angular';
 import {InsuranceAddPage} from "../insurance-add/insurance-add";
 import {InsuranceProvider} from "../../../../providers/insurance/insurance";
 
@@ -9,7 +9,10 @@ import {InsuranceProvider} from "../../../../providers/insurance/insurance";
  * See http://ionicframework.com/docs/components/#navigation for more info
  * on Ionic pages and navigation.
  */
-
+@IonicPage({
+  name: 'insurance-page',
+  priority: 'low'
+})
 @Component({
   selector: 'page-insurance',
   templateUrl: 'insurance.html',

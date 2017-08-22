@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {AlertController, ModalController, NavController, NavParams} from 'ionic-angular';
+import {AlertController, IonicPage, ModalController, NavController, NavParams} from 'ionic-angular';
 import {DependentAddPage} from "../dependent-add/dependent-add";
 import {DependentProvider} from "../../../../providers/dependent/dependent";
 
@@ -9,7 +9,10 @@ import {DependentProvider} from "../../../../providers/dependent/dependent";
  * See http://ionicframework.com/docs/components/#navigation for more info
  * on Ionic pages and navigation.
  */
-
+@IonicPage({
+  name: 'depentent-page',
+  priority: 'low'
+})
 @Component({
   selector: 'page-dependent',
   templateUrl: 'dependent.html',

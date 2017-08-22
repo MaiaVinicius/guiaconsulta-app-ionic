@@ -1,5 +1,5 @@
 import {Component, NgZone, ViewChild} from '@angular/core';
-import {Searchbar, ViewController} from 'ionic-angular';
+import {IonicPage, Searchbar, ViewController} from 'ionic-angular';
 import {SearchProvider} from "../../providers/search/search";
 import {LocationProvider} from "../../providers/location/location";
 
@@ -11,6 +11,10 @@ import {LocationProvider} from "../../providers/location/location";
  */
 declare var google: any;
 
+@IonicPage({
+  name: 'search-location-page',
+  priority: 'high'
+})
 @Component({
     selector: 'page-search-location',
     templateUrl: 'search-location.html',

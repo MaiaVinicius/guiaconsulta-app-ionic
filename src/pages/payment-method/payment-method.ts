@@ -1,5 +1,5 @@
 import {Component, ViewChild} from '@angular/core';
-import {NavController, NavParams, Searchbar, ViewController} from 'ionic-angular';
+import {IonicPage, NavController, NavParams, Searchbar, ViewController} from 'ionic-angular';
 import {SearchProvider} from "../../providers/search/search";
 
 /**
@@ -8,38 +8,41 @@ import {SearchProvider} from "../../providers/search/search";
  * See http://ionicframework.com/docs/components/#navigation for more info
  * on Ionic pages and navigation.
  */
-
+@IonicPage({
+  name: 'payment-method-page',
+  priority: 'high'
+})
 @Component({
-    selector: 'page-payment-method',
-    templateUrl: 'payment-method.html',
+  selector: 'page-payment-method',
+  templateUrl: 'payment-method.html',
 })
 export class PaymentMethodPage {
-    searchingInsurance = false;
-    insurances = [];
-    myInsurances = [];
+  searchingInsurance = false;
+  insurances = [];
+  myInsurances = [];
 
-    privatePayments = [{
-        id: 1,
-        name: "Consulta popular (até R$ 150,00)"
-    }, {
-        id: 2,
-        name: "Consulta particular"
-    }];
+  privatePayments = [{
+    id: 1,
+    name: "Consulta popular (até R$ 150,00)"
+  }, {
+    id: 2,
+    name: "Consulta particular"
+  }];
 
-    @ViewChild('searchBarInsurance') searchBar: Searchbar;
+  @ViewChild('searchBarInsurance') searchBar: Searchbar;
 
-    constructor(public searchProvider: SearchProvider, public viewCtrl: ViewController, public navCtrl: NavController, public navParams: NavParams) {
-        this.insurances = searchProvider.insurances;
-        this.myInsurances = searchProvider.myInsurances;
-    }
+  constructor(public searchProvider: SearchProvider, public viewCtrl: ViewController, public navCtrl: NavController, public navParams: NavParams) {
+    this.insurances = searchProvider.insurances;
+    this.myInsurances = searchProvider.myInsurances;
+  }
 
-    chooseItem(item) {
-        this.searchProvider.setPayment(item);
-        this.dismiss();
-    }
+  chooseItem(item) {
+    this.searchProvider.setPayment(item);
+    this.dismiss();
+  }
 
-    dismiss() {
-        this.viewCtrl.dismiss();
-    }
+  dismiss() {
+    this.viewCtrl.dismiss();
+  }
 
 }

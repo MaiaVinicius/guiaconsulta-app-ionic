@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {NavController, NavParams} from 'ionic-angular';
+import {IonicPage, NavController, NavParams} from 'ionic-angular';
 import {MedicationReminderAddPage} from "../medication-reminder-add/medication-reminder-add";
 import {ModalController} from 'ionic-angular';
 import {MedicationProvider} from "../../../providers/medication/medication";
@@ -10,7 +10,10 @@ import {MedicationProvider} from "../../../providers/medication/medication";
  * See http://ionicframework.com/docs/components/#navigation for more info
  * on Ionic pages and navigation.
  */
-
+@IonicPage({
+  name: 'medication-reminder-page',
+  priority: 'low'
+})
 @Component({
   selector: 'page-medication-reminder',
   templateUrl: 'medication-reminder.html',

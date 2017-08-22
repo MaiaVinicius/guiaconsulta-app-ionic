@@ -1,5 +1,5 @@
 import {Component, ViewChild} from '@angular/core';
-import {NavController, NavParams, Searchbar, ViewController} from 'ionic-angular';
+import {IonicPage, NavController, NavParams, Searchbar, ViewController} from 'ionic-angular';
 import {DoctorProfilePage} from "../doctor-profile/doctor-profile";
 import {SearchProvider} from "../../providers/search/search";
 
@@ -9,7 +9,10 @@ import {SearchProvider} from "../../providers/search/search";
  * See http://ionicframework.com/docs/components/#navigation for more info
  * on Ionic pages and navigation.
  */
-
+@IonicPage({
+  name: 'search-term-page',
+  priority: 'high'
+})
 @Component({
     selector: 'page-search-term',
     templateUrl: 'search-term.html',
