@@ -7,21 +7,13 @@ import {HomePage} from '../pages/home/home';
 
 import {StatusBar} from '@ionic-native/status-bar';
 import {SplashScreen} from '@ionic-native/splash-screen';
-import {SearchTermPage} from "../pages/search-term/search-term";
-import {SearchLocationPage} from "../pages/search-location/search-location";
-import {PaymentMethodPage} from "../pages/payment-method/payment-method";
 import {ResultPage} from "../pages/result/result";
 import {ResultFiltersPage} from "../pages/result-filters/result-filters";
-import {MedicationReminderPage} from "../pages/medication-reminder/medication-reminder/medication-reminder";
-import {MedicationReminderAddPage} from "../pages/medication-reminder/medication-reminder-add/medication-reminder-add";
-import {AppointmentsPage} from "../pages/appointments/appointments";
 import {EvaluationPage} from "../pages/evaluation/evaluation";
 import {Ionic2RatingModule} from 'ionic2-rating';
 import {ConfigurationsPage} from "../pages/profile/configurations/configurations";
 import {IndexPage} from "../pages/index/index";
 import {HelpPage} from "../pages/profile/help/help";
-import {ProfilePage} from "../pages/profile/profile/profile";
-import {SearchMedicationPage} from "../pages/medication-reminder/search-medication/search-medication";
 //wizard profile
 import {StepEmailPage} from "../pages/profile/profile-wizard/personal/step-email/step-email";
 import {StepGenderPage} from "../pages/profile/profile-wizard/personal/step-gender/step-gender";
@@ -32,42 +24,34 @@ import {StepHeightPage} from "../pages/profile/profile-wizard/personal/step-heig
 import {StepWeightPage} from "../pages/profile/profile-wizard/personal/step-weight/step-weight";
 import {StepLocationPage} from "../pages/profile/profile-wizard/personal/step-location/step-location";
 //others
-import {MultiPickerModule} from "ion-multi-picker";
 import {InviteDoctorPage} from "../pages/invite-doctor/invite-doctor";
 import {LoginPage} from "../pages/login/login";
 import {SearchProvider} from '../providers/search/search';
-import {AppointmentInfoPage} from "../pages/appointment-info/appointment-info";
 import {FavoriteDoctorsPage} from "../pages/profile/favorite-doctors/favorite-doctors";
-import {MedicalRecordPage} from "../pages/profile/medical-record/medical-record/medical-record";
 
 //
-import {File} from "@ionic-native/file";
-import {Transfer} from "@ionic-native/transfer";
-import {Camera} from "@ionic-native/camera";
-import {FilePath} from "@ionic-native/file-path";
-import {DependentPage} from "../pages/profile/dependent/dependent/dependent";
-import {DependentAddPage} from "../pages/profile/dependent/dependent-add/dependent-add";
 import {SearchDoctorPage} from "../pages/search-doctor/search-doctor";
-import {InsuranceAddPage} from "../pages/profile/insurance/insurance-add/insurance-add";
-import {InsurancePage} from "../pages/profile/insurance/insurance/insurance";
-import {InsuranceSearchPage} from "../pages/profile/insurance/insurance-search/insurance-search";
 import {DoctorProfilePage} from "../pages/doctor-profile/doctor-profile";
-import {FullProfilePage} from "../pages/profile/full-profile/full-profile/full-profile";
-import {SuperTabsController, SuperTabsModule} from 'ionic2-super-tabs';
-import {ProfileLifestylePage} from "../pages/profile/full-profile/profile-lifestyle/profile-lifestyle";
-import {ProfileMedicalRecordPage} from "../pages/profile/full-profile/profile-medical-record/profile-medical-record";
-import {ProfilePersonalPage} from "../pages/profile/full-profile/profile-personal/profile-personal";
 import {Geolocation} from "@ionic-native/geolocation";
 import {Http, HttpModule} from '@angular/http';
 import {LocationProvider} from '../providers/location/location';
-import {DependentProvider} from '../providers/dependent/dependent';
-import {InsuranceProvider} from '../providers/insurance/insurance';
-import {MedicationProvider} from '../providers/medication/medication';
-import {ProfileWizardProvider} from '../providers/profile-wizard/profile-wizard';
 import {AttendanceFormPage} from "../pages/attendance-form/attendance-form";
 import {UserProvider} from '../providers/user/user';
 import {AuthConfig, AuthHttp} from "angular2-jwt";
 import {Storage} from '@ionic/storage';
+
+//modules
+import {MedicationReminderModule} from "../pages/medication-reminder/medication-reminder/medication-reminder.module";
+import {SearchLocationModule} from "../pages/search-location/search-location.module";
+import {PaymentMethodModule} from "../pages/payment-method/payment-method.module";
+import {DependentModule} from "../pages/profile/dependent/dependent/dependent.module";
+import {InsuranceModule} from "../pages/profile/insurance/insurance/insurance.module";
+import {FullProfileModule} from "../pages/profile/full-profile/full-profile/full-profile.module";
+import {ProfileModule} from "../pages/profile/profile/profile.module";
+import {AppointmentsModule} from "../pages/appointments/appointments.module";
+import {ProfileWizardModule} from "../pages/profile/profile-wizard/profile-wizard.module";
+import {SearchTermModule} from "../pages/search-term/search-term.module";
+import {MedicalRecordModule} from "../pages/profile/medical-record/medical-record/medical-record.module";
 
 let storage = new Storage({});
 
@@ -84,43 +68,17 @@ export function getAuthHttp(http) {
   declarations: [
     MyApp,
     HomePage,
-    SearchLocationPage,
-    PaymentMethodPage,
     ResultPage,
     ResultFiltersPage,
-    MedicationReminderPage,
-    MedicationReminderAddPage,
-    AppointmentsPage,
-    AppointmentInfoPage,
     EvaluationPage,
     ConfigurationsPage,
     IndexPage,
-    SearchMedicationPage,
     HelpPage,
-    ProfilePage,
-    FullProfilePage,
     FavoriteDoctorsPage,
-    MedicalRecordPage,
-    DependentPage,
-    DependentAddPage,
-    InsuranceAddPage,
-    InsurancePage,
-    InsuranceSearchPage,
     SearchDoctorPage,
     DoctorProfilePage,
     AttendanceFormPage,
     //Wizard Pages,
-    StepEmailPage,
-    StepGenderPage,
-    StepBirthPage,
-    StepBloodGroupPage,
-    StepMaritalStatusPage,
-    StepHeightPage,
-    StepWeightPage,
-    StepLocationPage,
-    ProfileLifestylePage,
-    ProfileMedicalRecordPage,
-    ProfilePersonalPage,
     InviteDoctorPage,
     LoginPage
   ],
@@ -133,75 +91,51 @@ export function getAuthHttp(http) {
       preloadModules: true
     }),
     Ionic2RatingModule,
-    MultiPickerModule,
-    SuperTabsModule,
     HttpModule,
+    MedicationReminderModule,
+    SearchTermModule,
+    SearchLocationModule,
+    PaymentMethodModule,
+    DependentModule,
+    InsuranceModule,
+    FullProfileModule,
+    ProfileModule,
+    AppointmentsModule,
+    ProfileWizardModule,
+    MedicalRecordModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     HomePage,
-    SearchLocationPage,
-    PaymentMethodPage,
     ResultPage,
     ResultFiltersPage,
-    MedicationReminderPage,
-    MedicationReminderAddPage,
-    AppointmentsPage,
-    AppointmentInfoPage,
     EvaluationPage,
     ConfigurationsPage,
     IndexPage,
-    SearchMedicationPage,
     HelpPage,
-    ProfilePage,
-    FullProfilePage,
     FavoriteDoctorsPage,
-    MedicalRecordPage,
-    DependentPage,
-    DependentAddPage,
-    InsuranceAddPage,
-    InsurancePage,
-    InsuranceSearchPage,
     SearchDoctorPage,
     DoctorProfilePage,
     AttendanceFormPage,
-    //Wizard Pages
-    StepEmailPage,
-    StepGenderPage,
-    StepBirthPage,
-    StepBloodGroupPage,
-    StepMaritalStatusPage,
-    StepHeightPage,
-    StepWeightPage,
-    StepLocationPage,
-    ProfileLifestylePage,
-    ProfileMedicalRecordPage,
-    ProfilePersonalPage,
     InviteDoctorPage,
     LoginPage,
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    {
+      provide: ErrorHandler,
+      useClass: IonicErrorHandler
+    },
     {
       provide: AuthHttp,
       useFactory: getAuthHttp,
       deps: [Http]
     },
     SearchProvider,
-    File,
-    Transfer,
-    Camera,
-    FilePath,
-    SuperTabsController,
     Geolocation,
     LocationProvider,
-    DependentProvider,
-    InsuranceProvider,
-    MedicationProvider,
-    ProfileWizardProvider,
     UserProvider
   ]
 })

@@ -4,17 +4,24 @@
 import {DependentPage} from "./dependent";
 import {IonicPageModule} from "ionic-angular";
 import {NgModule} from "@angular/core";
+import {DependentAddPage} from "../dependent-add/dependent-add";
+import {DependentProvider} from "../../../../providers/dependent/dependent";
 
 @NgModule({
   declarations: [
-    DependentPage
+    DependentPage,
+    DependentAddPage
   ],
   imports: [
     IonicPageModule.forChild(DependentPage)
   ],
   entryComponents: [
-    DependentPage
+    DependentPage,
+    DependentAddPage
+  ],
+  providers: [
+    DependentProvider
   ]
 })
-export class DependentPageModule {
+export class DependentModule {
 }

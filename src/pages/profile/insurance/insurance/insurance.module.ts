@@ -4,17 +4,27 @@
 import {InsurancePage} from "./insurance";
 import {IonicPageModule} from "ionic-angular";
 import {NgModule} from "@angular/core";
+import {InsuranceSearchPage} from "../insurance-search/insurance-search";
+import {InsuranceAddPage} from "../insurance-add/insurance-add";
+import {InsuranceProvider} from "../../../../providers/insurance/insurance";
 
 @NgModule({
   declarations: [
-    InsurancePage
+    InsurancePage,
+    InsuranceAddPage,
+    InsuranceSearchPage,
   ],
   imports: [
     IonicPageModule.forChild(InsurancePage)
   ],
   entryComponents: [
-    InsurancePage
+    InsurancePage,
+    InsuranceAddPage,
+    InsuranceSearchPage,
+  ],
+  providers: [
+    InsuranceProvider,
   ]
 })
-export class InsurancePageModule {
+export class InsuranceModule {
 }

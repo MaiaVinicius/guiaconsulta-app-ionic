@@ -1,20 +1,20 @@
 /**
  * Created by MaiaVinicius on 22/08/17.
  */
-import {PaymentMethodPage} from "./payment-method";
 import {IonicPageModule} from "ionic-angular";
 import {NgModule} from "@angular/core";
+import {ProfilePage} from "./profile";
 
 @NgModule({
   declarations: [
-    PaymentMethodPage
+    ProfilePage
   ],
   imports: [
-    IonicPageModule.forChild(PaymentMethodPage)
+    IonicPageModule.forChild(ProfilePage)
   ],
   entryComponents: [
-    PaymentMethodPage
+    ProfilePage
   ]
 })
-export class PaymentMethodModule {
+export class ProfileModule {
 }

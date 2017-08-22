@@ -16,5 +16,5 @@ import {NgModule} from "@angular/core";
     SearchTermPage
   ]
 })
-export class SearchTermPageModule {
+export class SearchTermModule {
 }

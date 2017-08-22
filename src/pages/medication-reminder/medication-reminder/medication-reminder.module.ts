@@ -4,17 +4,27 @@
 import {MedicationReminderPage} from "./medication-reminder";
 import {IonicPageModule} from "ionic-angular";
 import {NgModule} from "@angular/core";
+import {MedicationReminderAddPage} from "../medication-reminder-add/medication-reminder-add";
+import {SearchMedicationPage} from "../search-medication/search-medication";
+import {MedicationProvider} from "../../../providers/medication/medication";
 
 @NgModule({
   declarations: [
-    MedicationReminderPage
+    MedicationReminderPage,
+    MedicationReminderAddPage,
+    SearchMedicationPage
   ],
   imports: [
     IonicPageModule.forChild(MedicationReminderPage)
   ],
   entryComponents: [
-    MedicationReminderPage
+    MedicationReminderPage,
+    MedicationReminderAddPage,
+    SearchMedicationPage
+  ],
+  providers: [
+    MedicationProvider,
   ]
 })
-export class MedicationReminderPageModule {
+export class MedicationReminderModule {
 }
