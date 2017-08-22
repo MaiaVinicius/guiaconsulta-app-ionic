@@ -192,8 +192,6 @@ export function getAuthHttp(http) {
             deps: [Http]
         },
         SearchProvider,
-
-        StatusBar,
         File,
         Transfer,
         Camera,
